@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DefiPatrol</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <meta name="theme-color" content="#ffffff">
+  <script src="./assets/js/config.js"></script>
+  <script src="./vendors/simplebar/simplebar.min.js"></script>
+  <!-- Stylesheets-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap"
+    rel="stylesheet">
+  <link href="./vendors/simplebar/simplebar.min.css" rel="stylesheet">
+  <link href="./assets/css/theme.min.css" rel="stylesheet">
+  <link href="./assets/css/user.css" rel="stylesheet">
+</head>
+
+<body>
+  <main class="main" id="top">
+    <div class="container" data-layout="container">
+      <script>
+        var isFluid = JSON.parse(localStorage.getItem('isFluid'));
+        if (isFluid) {
+          var container = document.querySelector('[data-layout]');
+          container.classList.remove('container');
+          container.classList.add('container-fluid');
+        }
+      </script>
+      <nav class="navbar navbar-light navbar-vertical navbar-transparent navbar-expand-xl">
+        <!-- Navbar -->
+        <div id="navbarPlaceholder"></div>
+        <!-- Navbar -->
+      </nav>
+
+      <div class="content">
+        <!-- TopBar -->
+        <div id="topbarPlaceholder"></div>
+        <!-- TopBar -->
+
+        <div class="row g-3 mb-3">
+          <div class="col-xxl-8 order-xxl-2">
+            <div class="card h-100">
+              <div class="card-body p-0">
+                <div class="scrollbar">
+                  <table
+                    class="table table-dashboard mb-0 table-borderless fs--1 border-200 overflow-hidden rounded-3 table-member-info">
+                    <thead class="bg-light">
+                      <tr class="text-900">
+                        <th>Member info</th>
+                        <th class="text-center">Attendance</th>
+                        <th class="text-center">Today</th>
+                        <th class="text-end">This Week</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="border-bottom border-200">
+                        <td>
+                          <div class="d-flex align-items-center position-relative">
+                            <div class="avatar avatar-2xl status-online">
+                              <img class="rounded-circle" src="./assets/img/team/7.jpg" alt="" />
+
+                            </div>
+                            <div class="flex-1 ms-3">
+                              <h6 class="mb-0 fw-semi-bold"><a class="stretched-link text-900"
+                                  href="../pages/user/profile.html">Gavin Belson</a></h6>
+                              <p class="text-500 fs--2 mb-0">CRM dashboard design</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="align-middle text-center"><small
+                            class="badge fw-semi-bold rounded-pill badge-soft-warning">Late</small></td>
+                        <td class="align-middle text-center"><small
+                            class="badge fw-semi-bold rounded-pill badge-soft-danger">12%</small>
+                          <p class="fs--2 mb-0">1h:52m</p>
+                        </td>
+                        <td class="align-middle">
+                          <div class="row g-2 justify-content-end">
+                            <div class="col-auto"><small
+                                class="badge fw-semi-bold rounded-pill badge-soft-primary">68%</small>
+                              <p class="fs--2 mb-0">1h:52m</p>
+                            </div>
+                            <div class="col-auto mt-auto">
+                              <div class="mb-1"
+                                data-echarts='{"tooltip":{"show":false},"series":[{"data":[15,22,28,20,20,35]}]}'></div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="border-bottom border-200">
+                        <td>
+                          <div class="d-flex align-items-center position-relative">
+                            <div class="avatar avatar-2xl status-online">
+                              <img class="rounded-circle" src="./assets/img/team/9.jpg" alt="" />
+
+                            </div>
+                            <div class="flex-1 ms-3">
+                              <h6 class="mb-0 fw-semi-bold"><a class="stretched-link text-900"
+                                  href="../pages/user/profile.html">Rsuss Hanneman</a></h6>
+                              <p class="text-500 fs--2 mb-0">Smart Learning Management</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="align-middle text-center"><small
+                            class="badge fw-semi-bold rounded-pill badge-soft-success">intime</small></td>
+                        <td class="align-middle text-center"><small
+                            class="badge fw-semi-bold rounded-pill badge-soft-success">86%</small>
+                          <p class="fs--2 mb-0">1h:52m</p>
+                        </td>
+                        <td class="align-middle">
+                          <div class="row g-2 justify-content-end">
+                            <div class="col-auto"><small
+                                class="badge fw-semi-bold rounded-pill badge-soft-warning">45%</small>
+                              <p class="fs--2 mb-0">1h:52m</p>
+                            </div>
+                            <div class="col-auto mt-auto">
+                              <div class="mb-1"
+                                data-echarts='{"tooltip":{"show":false},"series":[{"data":[30,20,40,18,20,35]}]}'></div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="border-bottom border-200">
+                        <td>
+                          <div class="d-flex align-items-center position-relative">
+                            <div class="avatar avatar-2xl status-away">
+                              <img class="rounded-circle" src="./assets/img/team/12.jpg" alt="" />
+
+                            </div>
+                            <div class="flex-1 ms-3">
+                              <h6 class="mb-0 fw-semi-bold"><a class="stretched-link text-900"
+                                  href="../pages/user/profile.html">Peter Gregory</a></h6>
+                              <p class="text-500 fs--2 mb-0">Graduate Network</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="align-middle text-center"><small
+                            class="badge fw-semi-bold rounded-pill badge-soft-success">intime</small></td>
+                        <td class="align-middle text-center"><small
+                            class="badge fw-semi-bold rounded-pill badge-soft-success">97%</small>
+                          <p class="fs--2 mb-0">1h:52m</p>
+                        </td>
+                        <td class="align-middle">
+                          <div class="row g-2 justify-content-end">
+                            <div class="col-auto"><small
+                                class="badge fw-semi-bold rounded-pill badge-soft-primary">60%</small>
+                              <p class="fs--2 mb-0">1h:52m</p>
+                            </div>
+                            <div class="col-auto mt-auto">
+                              <div class="mb-1"
+                                data-echarts='{"tooltip":{"show":false},"series":[{"data":[20,22,18,30,20,35]}]}'></div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="border-bottom border-200">
+                        <td>
+                          <div class="d-flex align-items-center position-relative">
+                            <div class="avatar avatar-2xl status-online">
+                              <img class="rounded-circle" src="./assets/img/team/avatar.png" alt="" />
+
+                            </div>
+                            <div class="flex-1 ms-3">
+                              <h6 class="mb-0 fw-semi-bold"><a class="stretched-link text-900"
+                                  href="../pages/user/profile.html">Jian-Yang</a></h6>
+                              <p class="text-500 fs--2 mb-0">Quality testing</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="align-middle text-center"><small
+                            class="badge fw-semi-bold rounded-pill badge-soft-success">intime</small></td>
+                        <td class="align-middle text-center"><small
+                            class="badge fw-semi-bold rounded-pill badge-soft-warning">34%</small>
+                          <p class="fs--2 mb-0">1h:52m</p>
+                        </td>
+                        <td class="align-middle">
+                          <div class="row g-2 justify-content-end">
+                            <div class="col-auto"><small
+                                class="badge fw-semi-bold rounded-pill badge-soft-success">80%</small>
+                              <p class="fs--2 mb-0">1h:52m</p>
+                            </div>
+                            <div class="col-auto mt-auto">
+                              <div class="mb-1"
+                                data-echarts='{"tooltip":{"show":false},"series":[{"data":[30,22,18,20,20,35]}]}'></div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="border-bottom border-200">
+                        <td>
+                          <div class="d-flex align-items-center position-relative">
+                            <div class="avatar avatar-2xl status-do-not-disturb">
+                              <img class="rounded-circle" src="./assets/img/team/16.jpg" alt="" />
+
+                            </div>
+                            <div class="flex-1 ms-3">
+                              <h6 class="mb-0 fw-semi-bold"><a class="stretched-link text-900"
+                                  href="../pages/user/profile.html">Laurie Bream</a></h6>
+                              <p class="text-500 fs--2 mb-0">Accounts</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="align-middle text-center"><small
+                            class="badge fw-semi-bold rounded-pill badge-soft-warning">Late</small></td>
+                        <td class="align-middle text-center"><small
+                            class="badge fw-semi-bold rounded-pill badge-soft-primary">12%</small>
+                          <p class="fs--2 mb-0">1h:52m</p>
+                        </td>
+                        <td class="align-middle">
+                          <div class="row g-2 justify-content-end">
+                            <div class="col-auto"><small
+                                class="badge fw-semi-bold rounded-pill badge-soft-danger">68%</small>
+                              <p class="fs--2 mb-0">1h:52m</p>
+                            </div>
+                            <div class="col-auto mt-auto">
+                              <div class="mb-1"
+                                data-echarts='{"tooltip":{"show":false},"series":[{"data":[20,22,18,20,20,35]}]}'></div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center position-relative">
+                            <div class="avatar avatar-2xl status-online">
+                              <img class="rounded-circle" src="./assets/img/team/25.jpg" alt="" />
+
+                            </div>
+                            <div class="flex-1 ms-3">
+                              <h6 class="mb-0 fw-semi-bold"><a class="stretched-link text-900"
+                                  href="../pages/user/profile.html">Fionna Mayer</a></h6>
+                              <p class="text-500 fs--2 mb-0">SAAS dashboard design</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="align-middle text-center"><small
+                            class="badge fw-semi-bold rounded-pill badge-soft-danger">Absent</small></td>
+                        <td class="align-middle text-center"><small
+                            class="badge fw-semi-bold rounded-pill badge-soft-primary">12%</small>
+                          <p class="fs--2 mb-0">1h:52m</p>
+                        </td>
+                        <td class="align-middle">
+                          <div class="row g-2 justify-content-end">
+                            <div class="col-auto"><small
+                                class="badge fw-semi-bold rounded-pill badge-soft-success">68%</small>
+                              <p class="fs--2 mb-0">1h:52m</p>
+                            </div>
+                            <div class="col-auto mt-auto">
+                              <div class="mb-1"
+                                data-echarts='{"tooltip":{"show":false},"series":[{"data":[30,22,18,30,20,35]}]}'></div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="card-footer bg-light py-2">
+                <div class="row flex-between-center">
+                  <div class="col-auto">
+                    <select class="form-select form-select-sm">
+                      <option>Last 7 days</option>
+                      <option>Last Month</option>
+                      <option>Last Year</option>
+                    </select>
+                  </div>
+                  <div class="col-auto"><a class="btn btn-sm btn-link px-0 fw-medium" href="#!">View All<span
+                        class="fas fa-chevron-right ms-1 fs--2"></span></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="row g-0 justify-content-between fs--1 mt-4 mb-3">
+            <div class="col-12 col-sm-auto text-center">
+              <p class="mb-0 text-600">Thank you for creating with Falcon <span class="d-none d-sm-inline-block">|
+                </span><br class="d-sm-none" /> 2022 &copy; <a href="https://themewagon.com">Themewagon</a></p>
+            </div>
+            <div class="col-12 col-sm-auto text-center">
+              <p class="mb-0 text-600">v3.14.0</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </main>
+  <!-- ===============================================-->
+  <!--    End of Main Content-->
+  <!-- ===============================================-->
+
+  <!--    JavaScripts-->
+  <script src="./vendors/popper/popper.min.js"></script>
+  <script src="./vendors/bootstrap/bootstrap.min.js"></script>
+  <script src="./vendors/anchorjs/anchor.min.js"></script>
+  <script src="./vendors/is/is.min.js"></script>
+  <script src="./vendors/chart/chart.min.js"></script>
+  <script src="./vendors/countup/countUp.umd.js"></script>
+  <script src="./vendors/echarts/echarts.min.js"></script>
+  <script src="./vendors/dayjs/dayjs.min.js"></script>
+  <script src="./vendors/fontawesome/all.min.js"></script>
+  <script src="./vendors/lodash/lodash.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+  <script src="./vendors/list.js/list.min.js"></script>
+  <script src="./assets/js/theme.js"></script>
+</body>
+
+</html>
