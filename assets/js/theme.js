@@ -13949,6 +13949,9 @@ fetch('topbar.html')
     let container = document.getElementById('topbarPlaceholder');
     container.insertAdjacentHTML( 'beforeBegin', text );
     let theme = localStorage.getItem('theme')
-    if (theme === 'dark')
+    if (theme === 'dark'){
       document.getElementById('themeControlToggle').setAttribute('checked', true)
+      document.getElementById('logo').src = "./assets/img/logo-dark.png"
+      document.getElementById('logo2').src = "./assets/img/logo-dark.png"
+    }
 })

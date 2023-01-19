@@ -6,13 +6,22 @@
         aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span
                 class="toggle-line"></span></span></button>
     <a class="navbar-brand me-1 me-sm-3" href="../index.html">
-        <div class="d-flex align-items-center"><img class="me-2"
-                src="./assets/img/icons/spot-illustrations/falcon.png" alt="" width="40" /><span
-                class="font-sans-serif">falcon</span>
+        <div class="d-flex align-items-center">
+            <img class="me-2"src="./assets/img/favicon.png" id="logo2" width="25" />
         </div>
     </a>
+    <ul class="navbar-nav align-items-center d-none d-lg-block"  style="max-width: 60%;">
+        <li class="nav-item">
+            <h6>The global cryptocurrency market cap now stands at $0.98T, up by 0.65% over the last day, according to CoinMarketcap..</h6>
+        </li>
+    </ul> 
 
     <ul class="navbar-nav navbar-nav-icons ms-auto flex-row align-items-center">
+        <li class="nav-item me-lg-2">
+            <button class="btn btn-primary">
+               <span class="fas fa-plus-circle"></span>Add
+            </button>
+        </li>
         <li class="nav-item">
             <div class="theme-control-toggle fa-icon-wait px-2">
                 <input class="form-check-input ms-0 theme-control-toggle-input" id="themeControlToggle"
@@ -31,22 +40,45 @@
                 <span class="fas fa-bell" data-fa-transform="shrink-6" style="font-size: 33px;"></span>
             </a>
         </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link btn rounded-pill border pe-0 ps-2" id="navbarDropdownUser"
+                role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="./assets/img/countries/us.png" style="height: 25px;"> &nbsp; USD &nbsp; 
+                <i class="fas fa-angle-down me-2"></i>
+            </a>
+            <div class="dropdown-menu dropdown-caret dropdown-caret dropdown-menu-end py-0"
+                aria-labelledby="navbarDropdownUser">
+                <div class="bg-white dark__bg-1000 rounded-2 py-2">
+                    <a class="dropdown-item">
+                        <img src="./assets/img/countries/us.png" style="height: 20px;"> &nbsp; USD
+                    </a>
+                    <a class="dropdown-item">
+                        <img src="./assets/img/countries/us.png" style="height: 20px;"> &nbsp; USD
+                    </a>
+                    <a class="dropdown-item">
+                        <img src="./assets/img/countries/us.png" style="height: 20px;"> &nbsp; USD
+                    </a>
+                    <a class="dropdown-item">
+                        <img src="./assets/img/countries/us.png" style="height: 20px;"> &nbsp; USD
+                    </a>                                                            
+                </div>
+            </div>
+        </li>        
         <li class="nav-item dropdown"><a class="nav-link pe-0 ps-2" id="navbarDropdownUser"
                 role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="avatar avatar-xl">
-                    <img class="rounded-circle" src="./assets/img/team/3-thumb.png" alt="" />
+                    <img class="rounded-circle" src="./assets/img/avatar.png" alt="" />
                 </div>
             </a>
             <div class="dropdown-menu dropdown-caret dropdown-caret dropdown-menu-end py-0"
                 aria-labelledby="navbarDropdownUser">
                 <div class="bg-white dark__bg-1000 rounded-2 py-2">
                     <a class="dropdown-item fw-bold text-warning" href="#!"><span
-                            class="fas fa-crown me-1"></span><span>Go Pro</span></a>
+                            class="fas fa-crown me-1"></span><span>Go Premium</span></a>
 
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#!">Set status</a>
                     <a class="dropdown-item" href="../pages/user/profile.html">Profile &amp; account</a>
-                    <a class="dropdown-item" href="#!">Feedback</a>
+                    <a class="dropdown-item" href="#!">Toggle Theme</a>
 
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="../pages/user/settings.html">Settings</a>
