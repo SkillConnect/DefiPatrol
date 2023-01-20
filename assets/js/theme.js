@@ -13955,3 +13955,15 @@ fetch('topbar.html')
       document.getElementById('logo2').src = "./assets/img/logo-dark.png"
     }
 })
+
+// When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar 
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("topbar").style.top = "0";
+  } else {
+    document.getElementById("topbar").style.top = "-80px";
+  }
+  prevScrollpos = currentScrollPos;
+}

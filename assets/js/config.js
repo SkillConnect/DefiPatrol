@@ -4,7 +4,7 @@ var CONFIG = {
   isNavbarVerticalCollapsed: false,
   theme: 'light',
   isRTL: false,
-  isFluid: true,
+  isFluid: false,
   navbarStyle: 'transparent',
   navbarPosition: 'vertical'
 };

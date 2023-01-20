@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DefiPatrol</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <meta name="theme-color" content="#ffffff">
+  <script src="./assets/js/config.js"></script>
+  <script src="./vendors/simplebar/simplebar.min.js"></script>
+  <!-- Stylesheets-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap"
+    rel="stylesheet">
+  <link href="./vendors/simplebar/simplebar.min.css" rel="stylesheet">
+  <link href="./assets/css/theme.min.css" rel="stylesheet">
+  <link href="./assets/css/user.css" rel="stylesheet">
+</head>
+
+<body>
+  <main class="main" id="top">
+    <div class="container" data-layout="container">
+      <script>
+        var isFluid = JSON.parse(localStorage.getItem('isFluid'));
+        if (isFluid) {
+          var container = document.querySelector('[data-layout]');
+          container.classList.remove('container');
+          container.classList.add('container-fluid');
+        }
+      </script>
+      <nav class="navbar navbar-light navbar-vertical navbar-transparent navbar-expand-xl">
+        <!-- Navbar -->
+        <div id="navbarPlaceholder"></div>
+        <!-- Navbar -->
+      </nav>
+
+      <div class="content">
+        <!-- TopBar -->
+        <div id="topbarPlaceholder"></div>
+        <!-- TopBar -->
+
+        <div class="row">
+          <div class="col-12">
+            <div class="card mb-3 btn-reveal-trigger">
+              <div class="card-header position-relative mb-8" style="min-height: 18vh;">
+                <div class="cover-image">
+                  <div class="bg-holder rounded-3 rounded-bottom-0" style="background-image: linear-gradient(#3650c2, #4683e7);"></div>
+                </div>
+                <div class="avatar avatar-5xl avatar-profile shadow-sm img-thumbnail rounded-circle">
+                  <div class="h-100 w-100 rounded-circle overflow-hidden position-relative"> 
+                    <img src="./assets/img/icon.png" width="200" alt="" data-dz-thumbnail="data-dz-thumbnail" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-0">
+          <div class="col-lg-8 pe-lg-2">
+            <!-- Profile -->
+            <div class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">Profile Settings</h5>
+              </div>
+              <div class="card-body bg-light">
+                <form class="row g-3">
+                  <div class="col-lg-6">
+                    <label class="form-label" for="first-name">First Name</label>
+                    <input class="form-control" id="first-name" type="text" value="Anthony" />
+                  </div>
+                  <div class="col-lg-6">
+                    <label class="form-label" for="last-name">Last Name</label>
+                    <input class="form-control" id="last-name" type="text" value="Hopkins" />
+                  </div>
+                  <div class="col-lg-6">
+                    <label class="form-label" for="email1">Email</label>
+                    <input class="form-control" id="email1" type="text" value="anthony@gmail.com" />
+                  </div>
+                  <div class="col-lg-6">
+                    <label class="form-label" for="email2">Phone</label>
+                    <input class="form-control" id="email2" type="text" value="+44098098304" />
+                  </div>
+                  <div class="col-12 d-flex justify-content-end">
+                    <button class="btn btn-primary" type="submit">Update </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- Profile Ends -->
+
+              <!-- Password -->
+              <div class="card mb-3">
+                <div class="card-header">
+                  <h5 class="mb-0">Change Password</h5>
+                </div>
+                <div class="card-body bg-light">
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label" for="old-password">Old Password</label>
+                      <input class="form-control" id="old-password" type="password" />
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label" for="new-password">New Password</label>
+                      <input class="form-control" id="new-password" type="password" />
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label" for="confirm-password">Confirm Password</label>
+                      <input class="form-control" id="confirm-password" type="password" />
+                    </div>
+                    <button class="btn btn-primary d-block w-100" type="submit">Update Password </button>
+                  </form>
+                </div>
+              </div>
+              <!-- Password Ends -->              
+              <!-- Billing -->
+              <div class="card mb-3">
+                <div class="card-header">
+                  <h5 class="mb-0">Billing Setting</h5>
+                </div>
+                <div class="card-body bg-light">
+                  <h5>Plan</h5>
+                  <p class="fs-0"><strong>Developer</strong>- Unlimited private repositories</p><a
+                    class="btn btn-falcon-default btn-sm" href="#!">Update Plan</a>
+                </div>
+                <div class="card-body bg-light border-top">
+                  <h5>Payment</h5>
+                  <p class="fs-0">You have not added any payment.</p><a class="btn btn-falcon-default btn-sm"
+                    href="#!">Add Payment </a>
+                </div>
+              </div>
+              <!-- Billing Ends -->
+          </div>
+          <div class="col-lg-4 ps-lg-2">
+            <!-- Account Settings -->
+            <div class="card mb-3 overflow-hidden">
+              <div class="card-header">
+                <h5 class="mb-0">Account Settings</h5>
+              </div>
+              <div class="card-body bg-light">
+                <div class="form-check form-switch mb-0 lh-1">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked="checked" />
+                  <label class="form-check-label mb-0" for="flexSwitchCheckDefault">Make your phone number
+                  </label>
+                </div>
+                <div class="form-check form-switch mb-0 lh-1">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" />
+                  <label class="form-check-label mb-0" for="flexSwitchCheckChecked">Allow user to follow you
+                  </label>
+                </div>
+                <div class="form-check form-switch mb-0 lh-1">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked="checked" />
+                  <label class="form-check-label mb-0" for="flexSwitchCheckDefault">Make your phone number visible
+                  </label>
+                </div>
+                <div class="form-check form-switch mb-0 lh-1">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" />
+                  <label class="form-check-label mb-0" for="flexSwitchCheckChecked">Allow user to follow you
+                  </label>
+                </div>                  
+              </div>
+            </div>
+            <!-- Account Setting Ends -->            
+            <!-- Referals -->
+            <div class="card mb-3">
+              <div class="card-body text-center py-4">
+                <div class="row justify-content-center">
+                  <div class="col-7 col-md-5"><img class="img-fluid" src="./assets/img/icons/spot-illustrations/41.png" alt="" style="width:58%;"></div>
+                </div>
+                <p class="lead mb-3">Invite a friend, you both get $100</p>
+                <div class="row justify-content-center">
+                  <div class="col-12">
+                    <form class="row gx-2">
+                      <div class="col-12 mb-2">
+                        <input class="form-control" type="email" placeholder="Email address" aria-label="Recipient's username">
+                      </div>
+                      <div class="col-12">
+                        <button class="btn btn-primary d-block w-100" type="submit">Send Invitation</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer bg-light text-center pt-2">
+                <div class="row justify-content-center">
+                  <div class="col-11 col-sm-10">
+                    <b>More ways to <br class="d-sm-none"> invite</b>
+                    <div class="btn-group my-2">
+                      <button class="btn btn-falcon-default icon-item fs--2 icon-item-lg"><svg class="svg-inline--fa fa-facebook-f fa-w-10 fs-0 mr-1 text-primary" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg><!-- <span class="fs-0 fab fa-facebook-f mr-1 text-primary"></span> Font Awesome fontawesome.com --></button>
+                      <button class="btn btn-falcon-default icon-item fs--2 icon-item-lg"><svg class="svg-inline--fa fa-twitter fa-w-16 fs-0 mr-1 text-twitter" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg><!-- <span class="fs-0 fab fa-twitter mr-1 text-twitter"></span> Font Awesome fontawesome.com --></button>
+                      <button class="btn btn-falcon-default icon-item fs--2 icon-item-lg"><svg class="svg-inline--fa fa-google-plus-g fa-w-20 fs-0 mr-1 text-google-plus" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google-plus-g" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg=""><path fill="currentColor" d="M386.061 228.496c1.834 9.692 3.143 19.384 3.143 31.956C389.204 370.205 315.599 448 204.8 448c-106.084 0-192-85.915-192-192s85.916-192 192-192c51.864 0 95.083 18.859 128.611 50.292l-52.126 50.03c-14.145-13.621-39.028-29.599-76.485-29.599-65.484 0-118.92 54.221-118.92 121.277 0 67.056 53.436 121.277 118.92 121.277 75.961 0 104.513-54.745 108.965-82.773H204.8v-66.009h181.261zm185.406 6.437V179.2h-56.001v55.733h-55.733v56.001h55.733v55.733h56.001v-55.733H627.2v-56.001h-55.733z"></path></svg><!-- <span class="fs-0 fab fa-google-plus-g mr-1 text-google-plus"></span> Font Awesome fontawesome.com --></button>
+                      <button class="btn btn-falcon-default icon-item fs--2 icon-item-lg"><svg class="svg-inline--fa fa-linkedin-in fa-w-14 fs-0 mr-1 text-info" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg><!-- <span class="fs-0 fab fa-linkedin-in mr-1 text-info"></span> Font Awesome fontawesome.com --></button>
+                    </div>
+                    <a data-bs-toggle="modal" data-bs-target="#referal-modal" href="!#" style="font-size: 14px;">
+                      View your Invites
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Referal Ends -->
+            <!-- Danger Zone -->
+            <div class="card">
+              <div class="card-header">
+                <h5 class="mb-0">Danger Zone</h5>
+              </div>
+              <div class="card-body bg-light">
+                <h5 class="fs-0">Transfer Ownership</h5>
+                <p class="fs--1">Transfer this account to another user or to an organization where you have the
+                  ability to create repositories.</p><a class="btn btn-falcon-warning d-block" href="#!">Transfer</a>
+                <div class="border-bottom border-dashed my-4"></div>
+                <h5 class="fs-0">Delete this account</h5>
+                <p class="fs--1">Once you delete a account, there is no going back. Please be certain.</p><a
+                  class="btn btn-falcon-danger d-block" href="#!">Deactivate Account</a>
+              </div>
+            </div>            
+            <!-- Danger Zone Ends --> 
+          </div>
+        </div>
+
+          <footer class="footer">
+            <div class="row g-0 justify-content-between fs--1 mt-4 mb-3">
+              <div class="col-12 text-center">
+                <p class="mb-0 text-600">Made with <span class="far fa-heart"></span> by <a href="https://moneypatrol.com">MoneyPatrol</a></p>
+              </div>
+            </div>
+          </footer>
+      </div>
+    </div>
+  </main>
+  <!-- ===============================================-->
+  <!--    End of Main Content-->
+  <!-- ===============================================-->
+
+  <!-- Referals -->
+  <div class="modal fade" id="referal-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+      <div class="modal-content position-relative">
+        <div class="modal-body p-0">
+          <div class="card" id="TableCrmRecentLeads" data-list="{&quot;valueNames&quot;:[&quot;name&quot;,&quot;email&quot;,&quot;status&quot;],&quot;page&quot;:8,&quot;pagination&quot;:true}">
+            <div class="card-header text-center">
+              <h5>Your Referrals</h5>
+            </div>
+            <div class="card-body px-0 py-0">
+              <div class="table-responsive scrollbar">
+                <table class="table fs--1 mb-0">
+                  <thead class="bg-200 text-800">
+                    <tr>
+                      <th class="py-3 white-space-nowrap" style="max-width: 30px;">
+                        <div class="form-check mb-0 d-flex align-items-center">
+                          <input class="form-check-input" id="checkbox-bulk-leads-select" type="checkbox" data-bulk-select="{&quot;body&quot;:&quot;table-recent-leads-body&quot;,&quot;actions&quot;:&quot;table-recent-leads-actions&quot;,&quot;replacedElement&quot;:&quot;table-recent-leads-replace-element&quot;}">
+                        </div>
+                      </th>
+                      <th class="sort align-middle" data-sort="name">Name</th>
+                      <th class="sort align-middle" data-sort="email">Email and Phone</th>
+                      <th class="sort align-middle" data-sort="status">Status</th>
+                      <th class="sort align-middle text-end">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody class="list" id="table-recent-leads-body"><tr class="hover-actions-trigger btn-reveal-trigger hover-bg-100">
+                      <td class="align-middle" style="max-width: 30px;">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="checkbox" id="recent-leads-0" data-bulk-select-row="data-bulk-select-row">
+                        </div>
+                      </td>
+                      <td class="align-middle white-space-nowrap"><a class="text-800" href="../pages/user/profile.html">
+                          <div class="d-flex align-items-center">
+                            <div class="avatar avatar-xl">
+                              <img class="rounded-circle" src="../assets/img/team/1-thumb.png" alt="">
+
+                            </div>
+                            <h6 class="mb-0 ps-2 name">Kerry Ingram</h6>
+                          </div>
+                        </a></td>
+                      <td class="align-middle white-space-nowrap text-primary email"><a href="mailto:john@gmail.com">john@gmail.com</a></td>
+                      <td class="align-middle white-space-nowrap"><small class="badge fw-semi-bold rounded-pill status badge-soft-primary"> New Lead</small></td>
+                      <td class="align-middle white-space-nowrap text-end position-relative">
+                        <div class="hover-actions bg-100">
+                          <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm"><svg class="svg-inline--fa fa-edit fa-w-18" aria-hidden="true" focusable="false" data-prefix="far" data-icon="edit" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"></path></svg><!-- <span class="far fa-edit"></span> Font Awesome fontawesome.com --></button>
+                          <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm"><svg class="svg-inline--fa fa-comment fa-w-16" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z"></path></svg><!-- <span class="far fa-comment"></span> Font Awesome fontawesome.com --></button>
+                        </div>
+                        <div class="dropdown font-sans-serif btn-reveal-trigger">
+                          <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal-sm transition-none" type="button" id="crm-recent-leads-0" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-ellipsis-h fa-w-16 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <span class="fas fa-ellipsis-h fs--2"></span> Font Awesome fontawesome.com --></button>
+                          <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="crm-recent-leads-0" style=""><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr><tr class="hover-actions-trigger btn-reveal-trigger hover-bg-100">
+                      <td class="align-middle" style="max-width: 30px;">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="checkbox" id="recent-leads-1" data-bulk-select-row="data-bulk-select-row">
+                        </div>
+                      </td>
+                      <td class="align-middle white-space-nowrap"><a class="text-800" href="../pages/user/profile.html">
+                          <div class="d-flex align-items-center">
+                            <div class="avatar avatar-xl">
+                              <img class="rounded-circle" src="../assets/img/team/2-thumb.png" alt="">
+
+                            </div>
+                            <h6 class="mb-0 ps-2 name">Bradie Knowall</h6>
+                          </div>
+                        </a></td>
+                      <td class="align-middle white-space-nowrap text-primary email"><a href="mailto:bradie@mail.ru">bradie@mail.ru</a></td>
+                      <td class="align-middle white-space-nowrap"><small class="badge fw-semi-bold rounded-pill status badge-soft-primary"> New Lead</small></td>
+                      <td class="align-middle white-space-nowrap text-end position-relative">
+                        <div class="hover-actions bg-100">
+                          <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm"><svg class="svg-inline--fa fa-edit fa-w-18" aria-hidden="true" focusable="false" data-prefix="far" data-icon="edit" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"></path></svg><!-- <span class="far fa-edit"></span> Font Awesome fontawesome.com --></button>
+                          <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm"><svg class="svg-inline--fa fa-comment fa-w-16" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z"></path></svg><!-- <span class="far fa-comment"></span> Font Awesome fontawesome.com --></button>
+                        </div>
+                        <div class="dropdown font-sans-serif btn-reveal-trigger">
+                          <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal-sm transition-none" type="button" id="crm-recent-leads-1" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-ellipsis-h fa-w-16 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <span class="fas fa-ellipsis-h fs--2"></span> Font Awesome fontawesome.com --></button>
+                          <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="crm-recent-leads-1"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr><tr class="hover-actions-trigger btn-reveal-trigger hover-bg-100">
+                      <td class="align-middle" style="max-width: 30px;">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="checkbox" id="recent-leads-2" data-bulk-select-row="data-bulk-select-row">
+                        </div>
+                      </td>
+                      <td class="align-middle white-space-nowrap"><a class="text-800" href="../pages/user/profile.html">
+                          <div class="d-flex align-items-center">
+                            <div class="avatar avatar-xl">
+                              <img class="rounded-circle" src="../assets/img/team/3-thumb.png" alt="">
+
+                            </div>
+                            <h6 class="mb-0 ps-2 name">Jenny Horas</h6>
+                          </div>
+                        </a></td>
+                      <td class="align-middle white-space-nowrap text-primary email"><a href="mailto:jenny@mail.ru">jenny@mail.ru</a></td>
+                      <td class="align-middle white-space-nowrap"><small class="badge fw-semi-bold rounded-pill status badge-soft-warning"> Cold Lead</small></td>
+                      <td class="align-middle white-space-nowrap text-end position-relative">
+                        <div class="hover-actions bg-100">
+                          <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm"><svg class="svg-inline--fa fa-edit fa-w-18" aria-hidden="true" focusable="false" data-prefix="far" data-icon="edit" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"></path></svg><!-- <span class="far fa-edit"></span> Font Awesome fontawesome.com --></button>
+                          <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm"><svg class="svg-inline--fa fa-comment fa-w-16" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z"></path></svg><!-- <span class="far fa-comment"></span> Font Awesome fontawesome.com --></button>
+                        </div>
+                        <div class="dropdown font-sans-serif btn-reveal-trigger">
+                          <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal-sm transition-none" type="button" id="crm-recent-leads-2" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-ellipsis-h fa-w-16 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <span class="fas fa-ellipsis-h fs--2"></span> Font Awesome fontawesome.com --></button>
+                          <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="crm-recent-leads-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr><tr class="hover-actions-trigger btn-reveal-trigger hover-bg-100">
+                      <td class="align-middle" style="max-width: 30px;">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="checkbox" id="recent-leads-3" data-bulk-select-row="data-bulk-select-row">
+                        </div>
+                      </td>
+                      <td class="align-middle white-space-nowrap"><a class="text-800" href="../pages/user/profile.html">
+                          <div class="d-flex align-items-center">
+                            <div class="avatar avatar-xl">
+                              <img class="rounded-circle" src="../assets/img/team/4-thumb.png" alt="">
+
+                            </div>
+                            <h6 class="mb-0 ps-2 name">Chris Pratt</h6>
+                          </div>
+                        </a></td>
+                      <td class="align-middle white-space-nowrap text-primary email"><a href="mailto:pratt@mail.ru">pratt@mail.ru</a></td>
+                      <td class="align-middle white-space-nowrap"><small class="badge fw-semi-bold rounded-pill status badge-soft-warning"> Cold Lead</small></td>
+                      <td class="align-middle white-space-nowrap text-end position-relative">
+                        <div class="hover-actions bg-100">
+                          <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm"><svg class="svg-inline--fa fa-edit fa-w-18" aria-hidden="true" focusable="false" data-prefix="far" data-icon="edit" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"></path></svg><!-- <span class="far fa-edit"></span> Font Awesome fontawesome.com --></button>
+                          <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm"><svg class="svg-inline--fa fa-comment fa-w-16" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z"></path></svg><!-- <span class="far fa-comment"></span> Font Awesome fontawesome.com --></button>
+                        </div>
+                        <div class="dropdown font-sans-serif btn-reveal-trigger">
+                          <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal-sm transition-none" type="button" id="crm-recent-leads-3" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-ellipsis-h fa-w-16 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <span class="fas fa-ellipsis-h fs--2"></span> Font Awesome fontawesome.com --></button>
+                          <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="crm-recent-leads-3"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr><tr class="hover-actions-trigger btn-reveal-trigger hover-bg-100">
+                      <td class="align-middle" style="max-width: 30px;">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="checkbox" id="recent-leads-4" data-bulk-select-row="data-bulk-select-row">
+                        </div>
+                      </td>
+                      <td class="align-middle white-space-nowrap"><a class="text-800" href="../pages/user/profile.html">
+                          <div class="d-flex align-items-center">
+                            <div class="avatar avatar-xl">
+                              <img class="rounded-circle" src="../assets/img/team/5-thumb.png" alt="">
+
+                            </div>
+                            <h6 class="mb-0 ps-2 name">Andy Murray</h6>
+                          </div>
+                        </a></td>
+                      <td class="align-middle white-space-nowrap text-primary email"><a href="mailto:andy@gmail.com">andy@gmail.com</a></td>
+                      <td class="align-middle white-space-nowrap"><small class="badge fw-semi-bold rounded-pill status badge-soft-success"> Won Lead</small></td>
+                      <td class="align-middle white-space-nowrap text-end position-relative">
+                        <div class="hover-actions bg-100">
+                          <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm"><svg class="svg-inline--fa fa-edit fa-w-18" aria-hidden="true" focusable="false" data-prefix="far" data-icon="edit" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"></path></svg><!-- <span class="far fa-edit"></span> Font Awesome fontawesome.com --></button>
+                          <button class="btn icon-item rounded-3 me-2 fs--2 icon-item-sm"><svg class="svg-inline--fa fa-comment fa-w-16" aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29 7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160-93.3 160-208 160z"></path></svg><!-- <span class="far fa-comment"></span> Font Awesome fontawesome.com --></button>
+                        </div>
+                        <div class="dropdown font-sans-serif btn-reveal-trigger">
+                          <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal-sm transition-none" type="button" id="crm-recent-leads-4" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-ellipsis-h fa-w-16 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <span class="fas fa-ellipsis-h fs--2"></span> Font Awesome fontawesome.com --></button>
+                          <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="crm-recent-leads-4"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr></tbody>
+                </table>
+              </div>
+            </div>
+          </div>  
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <!-- Referals -->
+
+  <!--    JavaScripts-->
+  <script src="./vendors/popper/popper.min.js"></script>
+  <script src="./vendors/bootstrap/bootstrap.min.js"></script>
+  <script src="./vendors/anchorjs/anchor.min.js"></script>
+  <script src="./vendors/is/is.min.js"></script>
+  <script src="./vendors/chart/chart.min.js"></script>
+  <script src="./vendors/countup/countUp.umd.js"></script>
+  <script src="./vendors/echarts/echarts.min.js"></script>
+  <script src="./vendors/dayjs/dayjs.min.js"></script>
+  <script src="./vendors/fontawesome/all.min.js"></script>
+  <script src="./vendors/lodash/lodash.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+  <script src="./vendors/list.js/list.min.js"></script>
+  <script src="./assets/js/theme.js"></script>
+</body>
+
+</html>

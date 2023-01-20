@@ -13,9 +13,7 @@
   <script src="./vendors/simplebar/simplebar.min.js"></script>
   <!-- Stylesheets-->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
   <link href="./vendors/simplebar/simplebar.min.css" rel="stylesheet">
   <link href="./assets/css/theme.min.css" rel="stylesheet">
   <link href="./assets/css/user.css" rel="stylesheet">
@@ -39,117 +37,102 @@
       </nav>
 
       <div class="content">
-        <!-- TopBar -->
-        <div id="topbarPlaceholder"></div>
-        <!-- TopBar -->
+          <!-- TopBar -->
+          <div id="topbarPlaceholder"></div>
+          <!-- TopBar -->
 
-        <div class="card mb-3">
-          <div class="bg-holder d-none d-lg-block bg-card"
-            style="background-image:url(./assets/img/icons/spot-illustrations/corner-4.png);">
-          </div>
-          <!--/.bg-holder-->
-
-          <div class="card-body position-relative">
-            <div class="row">
-              <div class="col-lg-8">
-                <h3>Frequently Asked Questions</h3>
-                <p class="mb-0">Below you'll find answers to the questions we get <br class='d-none.d-sm-block' /> asked
-                  the most about to join with Falcon</p>
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">Frequently asked questions</h5>
+            </div>
+            <div class="card-body bg-light pb-0">
+              <div class="row">
+                <div class="col-lg-6">
+                  <h5 class="fs-0">How does Falcon's pricing work?</h5>
+                  <p class="fs--1">The free version of Falcon is available for teams of up to 15 people. Our Falcon Premium plans of 15 or fewer qualify for a small team discount. As your team grows to 20 users or more and gets more value out of Falcon, you'll get closer to our standard monthly price per seat. The price of a paid Falcon plan is tiered, starting in groups of 5 and 10 users, based on the number of people you have in your Team or Organization.</p>
+                  <h5 class="fs-0">What forms of payment do you accept?</h5>
+                  <p class="fs--1">You can purchase Falcon with any major credit card. For annual subscriptions, we can issue an invoice payable by bank transfer or check. Please contact us to arrange an invoice purchase. Monthly purchases must be paid for by credit card.</p>
+                  <h5 class="fs-0">We need to add more people to our team. How will that be billed?</h5>
+                  <p class="fs--1">You can add as many new teammates as you need before changing your subscription. We will subsequently ask you to correct your subscription to cover current usage.</p>
+                  <h5 class="fs-0">How secure is Falcon?</h5>
+                  <p class="fs--1">Protecting the data you trust to Falcon is our first priority. Falcon uses physical, procedural, and technical safeguards to preserve the integrity and security of your information. We regularly back up your data to prevent data loss and aid in recovery. Additionally, we host data in secure SSAE 16 / SOC1 certified data centers, implement firewalls and access restrictions on our servers to better protect your information, and work with third party security researchers to ensure our practices are secure.</p>
+                </div>
+                <div class="col-lg-6">
+                  <h5 class="fs-0">Will I be charged sales tax?</h5>
+                  <p class="fs--1">As of May 2016, state and local sales tax will be applied to fees charged to customers with a billing address in the State of New York.</p>
+                  <h5 class="fs-0">Do you offer discounts?</h5>
+                  <p class="fs--1">We've built in discounts at each tier for teams smaller than 15 members. We also offer two months for free in exchange for an annual subscription.</p>
+                  <h5 class="fs-0">Do you offer academic pricing?</h5>
+                  <p class="fs--1">We're happy to work with student groups using Falcon. Contact Us</p>
+                  <h5 class="fs-0">Is there an on-premise version of Falcon?</h5>
+                  <p class="fs--1">We are passionate about the web. We don't plan to offer an internally hosted version of Falcon. We hope you trust us to provide a robust and secure service so you can do the work only your team can do.</p>
+                  <h5 class="fs-0">What is your refund policy?</h5>
+                  <p class="fs--1">We do not offer refunds apart from exceptions listed below. If you cancel your plan before the next renewal cycle, you will retain access to paid features until the end of your subscription period. When your subscription expires, you will lose access to paid features and all data associated with those features. Exceptions to our refund policy: canceling within 48 hours of initial charge will result in a full refund. If you cancel within this timeframe, you will lose access to paid features and associated data immediately upon canceling.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer py-3">
+              <div class="text-center py-3">
+                <h6 class="fs-0 fw-normal">Have more questions?</h6><a class="btn btn-falcon-primary btn-sm" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Ask us anything</a>
+              </div>
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content border-0">
+                    <div class="modal-header bg-card-gradient light">
+                      <h5 class="modal-title text-white" id="exampleModalLabel">Ask your question</h5>
+                      <button class="btn-close btn-close-white text-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="mb-3">
+                          <label for="name">Name</label>
+                          <input class="form-control" id="name" type="text" />
+                        </div>
+                        <div class="mb-3">
+                          <label for="emailModal">Email</label>
+                          <input class="form-control" id="emailModal" type="email" />
+                        </div>
+                        <div class="mb-3">
+                          <label for="question">Question</label>
+                          <textarea class="form-control" id="question" rows="4"></textarea>
+                        </div>
+                      </form>
+                      <button class="btn btn-primary btn-sm px-4" type="submit"><span class="fas fa-paper-plane me-2" aria-hidden="true"> </span>Send</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="card mb-3">
-          <div class="card-body">
-            <h6> <a href="#!">How does Falcon's pricing work?<span class="fas fa-caret-right ms-2"></span></a></h6>
-            <p class="fs--1 mb-0">The free version of Falcon is available for teams of up to 15 people. Our Falcon
-              Premium plans of 15 or fewer qualify for a small team discount. As your team grows to 20 users or more and
-              gets more value out of Falcon, you'll get closer to our standard monthly price per seat. The price of a
-              paid Falcon plan is tiered, starting in groups of 5 and 10 users, based on the number of people you have
-              in your Team or Organization.</p>
-            <hr class="my-3" />
-            <h6> <a href="#!">What forms of payment do you accept?<span class="fas fa-caret-right ms-2"></span></a></h6>
-            <p class="fs--1 mb-0">You can purchase Falcon with any major credit card. For annual subscriptions, we can
-              issue an invoice payable by bank transfer or check. Please contact us to arrange an invoice purchase.
-              Monthly purchases must be paid for by credit card.</p>
-            <hr class="my-3" />
-            <h6> <a href="#!">We need to add more people to our team. How will that be billed?<span
-                  class="fas fa-caret-right ms-2"></span></a></h6>
-            <p class="fs--1 mb-0">You can add as many new teammates as you need before changing your subscription. We
-              will subsequently ask you to correct your subscription to cover current usage.</p>
-            <hr class="my-3" />
-            <h6> <a href="#!">How secure is Falcon?<span class="fas fa-caret-right ms-2"></span></a></h6>
-            <p class="fs--1 mb-0">Protecting the data you trust to Falcon is our first priority. Falcon uses physical,
-              procedural, and technical safeguards to preserve the integrity and security of your information. We
-              regularly back up your data to prevent data loss and aid in recovery. Additionally, we host data in secure
-              SSAE 16 / SOC1 certified data centers, implement firewalls and access restrictions on our servers to
-              better protect your information, and work with third party security researchers to ensure our practices
-              are secure.</p>
-            <hr class="my-3" />
-            <h6> <a href="#!">Will I be charged sales tax?<span class="fas fa-caret-right ms-2"></span></a></h6>
-            <p class="fs--1 mb-0">As of May 2016, state and local sales tax will be applied to fees charged to customers
-              with a billing address in the State of New York.</p>
-            <hr class="my-3" />
-            <h6> <a href="#!">Do you offer discounts?<span class="fas fa-caret-right ms-2"></span></a></h6>
-            <p class="fs--1 mb-0">We've built in discounts at each tier for teams smaller than 15 members. We also offer
-              two months for free in exchange for an annual subscription.</p>
-            <hr class="my-3" />
-            <h6> <a href="#!">Do you offer academic pricing?<span class="fas fa-caret-right ms-2"></span></a></h6>
-            <p class="fs--1 mb-0">We're happy to work with student groups using Falcon. Contact Us</p>
-            <hr class="my-3" />
-            <h6> <a href="#!">Is there an on-premise version of Falcon?<span class="fas fa-caret-right ms-2"></span></a>
-            </h6>
-            <p class="fs--1 mb-0">We are passionate about the web. We don't plan to offer an internally hosted version
-              of Falcon. We hope you trust us to provide a robust and secure service so you can do the work only your
-              team can do.</p>
-            <hr class="my-3" />
-            <h6> <a href="#!">What is your refund policy?<span class="fas fa-caret-right ms-2"></span></a></h6>
-            <p class="fs--1 mb-0">We do not offer refunds apart from exceptions listed below. If you cancel your plan
-              before the next renewal cycle, you will retain access to paid features until the end of your subscription
-              period. When your subscription expires, you will lose access to paid features and all data associated with
-              those features. Exceptions to our refund policy: canceling within 48 hours of initial charge will result
-              in a full refund. If you cancel within this timeframe, you will lose access to paid features and
-              associated data immediately upon canceling.</p>
-          </div>
-          <div class="card-footer d-flex align-items-center bg-light">
-            <h5 class="d-inline-block me-3 mb-0 fs--1">Was this information helpful?</h5>
-            <button class="btn btn-falcon-default btn-sm">Yes</button>
-            <button class="btn btn-falcon-default btn-sm ms-2">No</button>
-          </div>
-        </div>
 
-        <footer class="footer">
-          <div class="row g-0 justify-content-between fs--1 mt-4 mb-3">
-            <div class="col-12 col-sm-auto text-center">
-              <p class="mb-0 text-600">Thank you for creating with Falcon <span class="d-none d-sm-inline-block">|
-                </span><br class="d-sm-none" /> 2022 &copy; <a href="https://themewagon.com">Themewagon</a></p>
+          <footer class="footer">
+            <div class="row g-0 justify-content-between fs--1 mt-4 mb-3">
+              <div class="col-12 text-center">
+                <p class="mb-0 text-600">Made with <span class="far fa-heart"></span> by <a href="https://moneypatrol.com">MoneyPatrol</a></p>
+              </div>
             </div>
-            <div class="col-12 col-sm-auto text-center">
-              <p class="mb-0 text-600">v3.14.0</p>
-            </div>
-          </div>
-        </footer>
+          </footer>
+        </div>
       </div>
-    </div>
-  </main>
-  <!-- ===============================================-->
-  <!--    End of Main Content-->
-  <!-- ===============================================-->
-
-  <!--    JavaScripts-->
-  <script src="./vendors/popper/popper.min.js"></script>
-  <script src="./vendors/bootstrap/bootstrap.min.js"></script>
-  <script src="./vendors/anchorjs/anchor.min.js"></script>
-  <script src="./vendors/is/is.min.js"></script>
-  <script src="./vendors/chart/chart.min.js"></script>
-  <script src="./vendors/countup/countUp.umd.js"></script>
-  <script src="./vendors/echarts/echarts.min.js"></script>
-  <script src="./vendors/dayjs/dayjs.min.js"></script>
-  <script src="./vendors/fontawesome/all.min.js"></script>
-  <script src="./vendors/lodash/lodash.min.js"></script>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-  <script src="./vendors/list.js/list.min.js"></script>
-  <script src="./assets/js/theme.js"></script>
-</body>
-
-</html>
+    </main>
+    <!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+  
+    <!--    JavaScripts-->
+    <script src="./vendors/popper/popper.min.js"></script>
+    <script src="./vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="./vendors/anchorjs/anchor.min.js"></script>
+    <script src="./vendors/is/is.min.js"></script>
+    <script src="./vendors/chart/chart.min.js"></script>
+    <script src="./vendors/countup/countUp.umd.js"></script>
+    <script src="./vendors/echarts/echarts.min.js"></script>
+    <script src="./vendors/dayjs/dayjs.min.js"></script>
+    <script src="./vendors/fontawesome/all.min.js"></script>
+    <script src="./vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="./vendors/list.js/list.min.js"></script>
+    <script src="./assets/js/theme.js"></script>
+  </body>
+  
+  </html>
