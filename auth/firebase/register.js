@@ -16,7 +16,6 @@ if (registerForm) {
     event.preventDefault();
     const formProps = new FormData(event.target);
     const formData = Object.fromEntries(formProps);
-    console.log(formData);
     if (validateFormData(formData)) {
       const auth = getAuth();
       try {
