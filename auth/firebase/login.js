@@ -29,9 +29,6 @@ if (loginForm) {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      const user = auth.currentUser;
-      console.log(user.uid);
-      successMessage("Logged in successfully!");
     } catch (error) {
       console.log(error);
       failMessage("Login failed!");
@@ -62,18 +59,28 @@ if (logoutBtn) {
   });
 }
 
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
   const indexPage = "/";
   const loginPage = "/auth/login";
   const currentPage = location.pathname;
 
   if (user) {
+    const user = auth.currentUser;
+    const emailVerified = user.emailVerified;
+    if (!emailVerified) {
+      failMessage("Please verify your email first!");
+      await signOut(auth);
+      return;
+    }
     if (currentPage.startsWith(loginPage)) {
+      successMessage("Login Successful!");
       location.pathname = indexPage;
     }
-  } else {
-    if (!currentPage.startsWith(loginPage)) {
-      location.pathname = loginPage + ".html";
-    }
   }
+  
+  // else {
+  //   if (!currentPage.startsWith(loginPage)) {
+  //     location.pathname = loginPage + ".html";
+  //   }
+  // }
 });
