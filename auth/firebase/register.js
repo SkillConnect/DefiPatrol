@@ -6,7 +6,19 @@ import {
   sendEmailVerification,
 } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-auth.js";
 
-import { successMessage, failMessage } from "./index.js";
+import { successMessage, failMessage, app } from "./index.js";
+
+import {
+  getDatabase,
+  set,
+  ref,
+  get,
+  child,
+  remove,
+} from "https://www.gstatic.com/firebasejs/9.16.0/firebase-database.js";
+
+const db = getDatabase(app);
+const dbRef = ref(getDatabase());
 
 const registerForm = document.getElementById("registerForm");
 const googleSignUp = document.getElementById("googleSignUp");
@@ -19,14 +31,14 @@ if (registerForm) {
     if (validateFormData(formData)) {
       const auth = getAuth();
       try {
-        const { email, password } = formData;
+        const { name, email, password } = formData;
         const result = await createUserWithEmailAndPassword(
           auth,
           email,
           password
         );
         const userId = result.user.uid;
-        console.log(userId);
+        await addProfile(userId, name, email);
         await sendEmailVerification(auth.currentUser);
         successMessage("Registered Successfully! Check your email to verify.");
       } catch (error) {
@@ -44,14 +56,25 @@ if (googleSignUp) {
     const auth = getAuth();
     try {
       const result = await signInWithPopup(auth, provider);
-      const userId = result.user.uid;
-      console.log(userId);
+      const user = result.user;
+      const { displayName, uid, email } = user;
+      await addProfile(uid, displayName, email);
       successMessage("Google Auth Successful!");
     } catch (error) {
       failMessage(error.message);
       console.log(error);
     }
   });
+}
+
+export async function addProfile(userId, name, email) {
+  try {
+    await set(ref(db, `profile/${userId}/name`), name);
+    await set(ref(db, `profile/${userId}/email`), email);
+    await set(ref(db, `profile/${userId}/referalCode`), userId);
+  } catch (error) {
+    failMessage(error.message);
+  }
 }
 
 function validateFormData(formData) {

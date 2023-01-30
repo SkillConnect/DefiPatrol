@@ -10,7 +10,7 @@ const firebaseConfig = {
   appId: "1:928898888286:web:9c4fbbe93b0a35f65bfacf",
 };
 
-initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 
 export function failMessage(err) {
   Swal.fire({

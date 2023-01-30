@@ -7,7 +7,18 @@ import {
   GoogleAuthProvider,
 } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-auth.js";
 
-import { successMessage, failMessage } from "./index.js";
+import { successMessage, failMessage, app } from "./index.js";
+
+import { addProfile } from "./register.js"
+
+import {
+  getDatabase,
+  set,
+  ref,
+} from "https://www.gstatic.com/firebasejs/9.16.0/firebase-database.js";
+
+const db = getDatabase(app);
+const dbRef = ref(getDatabase());
 
 const loginForm = document.getElementById("login-form");
 const googleSignUp = document.getElementById("googleSignUp");
@@ -29,6 +40,13 @@ if (loginForm) {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
+      const user = auth.currentUser;
+      if (user !== null) {
+        const email = user.email;
+        const emailVerified = user.emailVerified;
+        const uid = user.uid;
+        console.log(uid, email, emailVerified);
+      }
     } catch (error) {
       console.log(error);
       failMessage("Login failed!");
@@ -42,9 +60,9 @@ if (googleSignUp) {
     const provider = new GoogleAuthProvider();
     try {
       const result = await signInWithPopup(auth, provider);
-      const userId = result.user.uid;
-      console.log(userId);
-      successMessage("Google Auth Successful!");
+      const user = result.user;
+      const { displayName, uid, email } = user;
+      await addProfile(uid, displayName, email);
     } catch (error) {
       failMessage(error.message);
       console.log(error);
@@ -77,10 +95,10 @@ onAuthStateChanged(auth, async (user) => {
       location.pathname = indexPage;
     }
   }
-  
-  // else {
-  //   if (!currentPage.startsWith(loginPage)) {
-  //     location.pathname = loginPage + ".html";
-  //   }
-  // }
+
+  else {
+    if (!currentPage.startsWith(loginPage)) {
+      location.pathname = loginPage + ".html";
+    }
+  }
 });
