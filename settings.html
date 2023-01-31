@@ -73,7 +73,7 @@
                 <form class="row g-3" id="profileForm">
                   <div class="col-lg-6">
                     <label class="form-label" for="name">Name</label>
-                    <input class="form-control" id="name" type="text" />
+                    <input class="form-control" id="name" type="text" required />
                   </div>
                   <!-- <div class="col-lg-6">
                     <label class="form-label" for="last-name">Last Name</label>
@@ -81,11 +81,11 @@
                   </div> -->
                   <div class="col-lg-6">
                     <label class="form-label" for="email">Email</label>
-                    <input class="form-control" id="email" type="email" />
+                    <input class="form-control" id="email" type="email" disabled />
                   </div>
                   <div class="col-lg-6">
                     <label class="form-label" for="phone">Phone</label>
-                    <input class="form-control" id="phone" type="tel" />
+                    <input class="form-control" id="phone" type="tel" required />
                   </div>
                   <div class="col-12 d-flex justify-content-end">
                     <button class="btn btn-primary" type="submit">Profile Update </button>
@@ -101,20 +101,20 @@
                   <h5 class="mb-0">Change Password</h5>
                 </div>
                 <div class="card-body bg-light">
-                  <form>
+                  <form id="updatePasswordForm">
                     <div class="mb-3">
                       <label class="form-label" for="old-password">Old Password</label>
-                      <input class="form-control" id="old-password" type="password" />
+                      <input class="form-control" id="old-password" type="password" required />
                     </div>
                     <div class="mb-3">
                       <label class="form-label" for="new-password">New Password</label>
-                      <input class="form-control" id="new-password" type="password" />
+                      <input class="form-control" id="new-password" type="password" required disabled />
                     </div>
                     <div class="mb-3">
                       <label class="form-label" for="confirm-password">Confirm Password</label>
-                      <input class="form-control" id="confirm-password" type="password" />
+                      <input class="form-control" id="confirm-password" type="password" required disabled />
                     </div>
-                    <button class="btn btn-primary float-end" type="submit">Update Password</button>
+                    <input class="btn btn-primary float-end" type="submit" id="updatePasswordBtn" value="Update Password" disabled />
                   </form>
                 </div>
               </div>
@@ -552,6 +552,8 @@
   <script src="./auth/firebase/settings.js" type="module"></script>
   <script src="./auth/firebase/login.js" type="module"></script>
   <script src="./auth/firebase/index.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>
