@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DefiPatrol</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <meta name="theme-color" content="#ffffff">
+  <script src="./assets/js/config.js"></script>
+  <script src="./vendors/simplebar/simplebar.min.js"></script>
+  <!-- Stylesheets-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+  <link href="./vendors/simplebar/simplebar.min.css" rel="stylesheet">
+  <link href="./assets/css/theme.min.css" rel="stylesheet">
+  <link href="./assets/css/user.css" rel="stylesheet">
+</head>
+
+<body>
+  <main class="main" id="top">
+    <div class="container" data-layout="container">
+      <script>
+        var isFluid = JSON.parse(localStorage.getItem('isFluid'));
+        if (isFluid) {
+          var container = document.querySelector('[data-layout]');
+          container.classList.remove('container');
+          container.classList.add('container-fluid');
+        }
+      </script>
+      <nav class="navbar navbar-light navbar-vertical navbar-transparent navbar-expand-xl">
+        <!-- Navbar -->
+        <div id="navbarPlaceholder"></div>
+        <!-- Navbar -->
+      </nav>
+
+      <div class="content">
+          <!-- TopBar -->
+          <div id="topbarPlaceholder"></div>
+          <!-- TopBar -->
+
+          <div class="card mb-3">
+            <div class="bg-holder d-none d-lg-block bg-card" style="background-image:url(../../../assets/img/icons/spot-illustrations/corner-4.png);">
+            </div>
+            <!--/.bg-holder-->
+
+            <div class="card-body position-relative">
+              <div class="row">
+                <div class="col-lg-10">
+                  <h3>Contact Us</h3>
+                  <p class="mb-0">
+                    Send us a message with your query, we will get back to you within 48 hrs.
+                  </p>
+                  <a class="btn btn-link btn-sm ps-0 mt-2" href="faq.html">Refer to the FAQ for common questions
+                    <span class="fas fa-chevron-right ms-1 fs--2"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card mb-3">
+            <div class="card-header">
+              <div class="row flex-between-end">
+                <div class="col-auto align-self-center">
+                  <h5 class="mb-0" data-anchor="data-anchor">We are happy to help you.</h5>
+                </div>
+              </div>
+            </div>
+            <div class="card-body bg-light">
+              <div class="mb-3">
+                <label class="form-label" for="exampleFormControlInput1">Topic</label>
+                <select class="form-select" aria-label="Default select example">
+                  <option value="1" selected>Features</option>
+                  <option value="2">Coin/Token</option>
+                  <option value="3">Bugs</option>
+                  <option value="3">Other</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="exampleFormControlInput1">Title</label>
+                <input class="form-control" id="exampleFormControlInput1" type="text" placeholder="Short Descriptive Title" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="exampleFormControlTextarea1">Details</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Any additional details..."></textarea>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="formFileMultiple">Attachment (Optional)</label>
+                <input class="form-control" id="formFileMultiple" type="file" multiple="multiple" />
+              </div>
+              <div class="float-end">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </div>
+
+          <footer class="footer">
+            <div class="row g-0 justify-content-between fs--1 mt-4 mb-3">
+              <div class="col-12 text-center">
+                <p class="mb-0 text-600">Made with <span class="far fa-heart"></span> by <a href="https://moneypatrol.com">MoneyPatrol</a></p>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </main>
+    <!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+  
+    <!--    JavaScripts-->
+    <script src="./vendors/popper/popper.min.js"></script>
+    <script src="./vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="./vendors/anchorjs/anchor.min.js"></script>
+    <script src="./vendors/is/is.min.js"></script>
+    <script src="./vendors/chart/chart.min.js"></script>
+    <script src="./vendors/countup/countUp.umd.js"></script>
+    <script src="./vendors/echarts/echarts.min.js"></script>
+    <script src="./vendors/dayjs/dayjs.min.js"></script>
+    <script src="./vendors/fontawesome/all.min.js"></script>
+    <script src="./vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="./vendors/list.js/list.min.js"></script>
+    <script src="./assets/js/theme.js"></script>
+  </body>
+  
+  </html>
