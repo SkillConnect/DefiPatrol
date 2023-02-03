@@ -40,7 +40,7 @@
                       </div>
                     </div>
                     <div class="mt-3 mb-4 mt-md-4 mb-md-5 light">
-                      <p class="text-white">Don't have an account?<br><a class="text-decoration-underline link-light" href="../../../pages/authentication/card/register.html">Get started!</a></p>
+                      <p class="text-white">Don't have an account?<br><a class="text-decoration-underline link-light" href="./register.html">Get started!</a></p>
                       <p class="mb-0 mt-4 mt-md-5 fs--1 fw-semi-bold text-white opacity-75">Read our <a class="text-decoration-underline text-white" href="#!">terms</a> and <a class="text-decoration-underline text-white" href="#!">conditions </a></p>
                     </div>
                   </div>
@@ -51,16 +51,16 @@
                           <h3>Account Login</h3>
                         </div>
                       </div>
-                      <form>
+                      <form id="login-form">
                         <div class="mb-3">
                           <label class="form-label" for="card-email">Email address</label>
-                          <input class="form-control" id="card-email" type="email" />
+                          <input class="form-control" id="card-email" name="email" type="email" required />
                         </div>
                         <div class="mb-3">
                           <div class="d-flex justify-content-between">
                             <label class="form-label" for="card-password">Password</label>
                           </div>
-                          <input class="form-control" id="card-password" type="password" />
+                          <input class="form-control" id="card-password" name="password" type="password" required />
                         </div>
                         <div class="row flex-between-center">
                           <div class="col-auto">
@@ -72,17 +72,16 @@
                           <div class="col-auto"><a class="fs--1" href="../../../pages/authentication/card/forgot-password.html">Forgot Password?</a></div>
                         </div>
                         <div class="mb-3">
-                          <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Log in</button>
+                          <input type="submit" class="btn btn-primary d-block w-100 mt-3" value="Log in" name="submit" />
                         </div>
                       </form>
-                      <div class="position-relative mt-4">
+                      <!-- <div class="position-relative mt-4">
                         <hr />
                         <div class="divider-content-center">or log in with</div>
                       </div>
-                      <div class="row g-2 mt-2">
+                      <div class="row g-2 mt-2" id="googleSignUp">
                         <div class="col-sm-6"><a class="btn btn-outline-google-plus btn-sm d-block w-100" href="#"><span class="fab fa-google-plus-g me-2" data-fa-transform="grow-8"></span> google</a></div>
-                        <div class="col-sm-6"><a class="btn btn-outline-facebook btn-sm d-block w-100" href="#"><span class="fab fa-facebook-square me-2" data-fa-transform="grow-8"></span> facebook</a></div>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                 </div>
@@ -110,6 +109,11 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="../vendors/list.js/list.min.js"></script>
     <script src="../assets/js/theme.js"></script>
+
+    <script src="./firebase/login.js" type="module"></script>
+    <script src="./firebase/index.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.3.0/sha.js" integrity="sha512-kXauCtCp7Yqhpp2DFARGDuW/+dMicWzNobiA91eMs+yeLjbbTV55HX8F+tNOZ6LHulUkw+PgcIUFJfqrOcJG0w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   </body>
 

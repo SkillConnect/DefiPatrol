@@ -70,22 +70,22 @@
                 <h5 class="mb-0">Profile Settings</h5>
               </div>
               <div class="card-body bg-light">
-                <form class="row g-3">
+                <form class="row g-3" id="profileForm">
                   <div class="col-lg-6">
-                    <label class="form-label" for="first-name">First Name</label>
-                    <input class="form-control" id="first-name" type="text" value="Anthony" />
+                    <label class="form-label" for="name">Name</label>
+                    <input class="form-control" id="name" type="text" required />
                   </div>
-                  <div class="col-lg-6">
+                  <!-- <div class="col-lg-6">
                     <label class="form-label" for="last-name">Last Name</label>
                     <input class="form-control" id="last-name" type="text" value="Hopkins" />
+                  </div> -->
+                  <div class="col-lg-6">
+                    <label class="form-label" for="email">Email</label>
+                    <input class="form-control" id="email" type="email" disabled />
                   </div>
                   <div class="col-lg-6">
-                    <label class="form-label" for="email1">Email</label>
-                    <input class="form-control" id="email1" type="text" value="anthony@gmail.com" />
-                  </div>
-                  <div class="col-lg-6">
-                    <label class="form-label" for="email2">Phone</label>
-                    <input class="form-control" id="email2" type="text" value="+44098098304" />
+                    <label class="form-label" for="phone">Phone</label>
+                    <input class="form-control" id="phone" type="tel" required />
                   </div>
                   <div class="col-12 d-flex justify-content-end">
                     <button class="btn btn-primary" type="submit">Profile Update </button>
@@ -101,20 +101,20 @@
                   <h5 class="mb-0">Change Password</h5>
                 </div>
                 <div class="card-body bg-light">
-                  <form>
+                  <form id="updatePasswordForm">
                     <div class="mb-3">
                       <label class="form-label" for="old-password">Old Password</label>
-                      <input class="form-control" id="old-password" type="password" />
+                      <input class="form-control" id="old-password" type="password" required />
                     </div>
                     <div class="mb-3">
                       <label class="form-label" for="new-password">New Password</label>
-                      <input class="form-control" id="new-password" type="password" />
+                      <input class="form-control" id="new-password" type="password" required disabled />
                     </div>
                     <div class="mb-3">
                       <label class="form-label" for="confirm-password">Confirm Password</label>
-                      <input class="form-control" id="confirm-password" type="password" />
+                      <input class="form-control" id="confirm-password" type="password" required disabled />
                     </div>
-                    <button class="btn btn-primary float-end" type="submit">Update Password</button>
+                    <input class="btn btn-primary float-end" type="submit" id="updatePasswordBtn" value="Update Password" disabled />
                   </form>
                 </div>
               </div>
@@ -331,7 +331,7 @@
                         </div>
                         <div class="dropdown font-sans-serif btn-reveal-trigger">
                           <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal-sm transition-none" type="button" id="crm-recent-leads-0" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-ellipsis-h fa-w-16 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <span class="fas fa-ellipsis-h fs--2"></span> Font Awesome fontawesome.com --></button>
-                          <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="crm-recent-leads-0" style=""><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                          <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="crm-recent-leads-0"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
                             <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
                           </div>
                         </div>
@@ -582,6 +582,12 @@
   <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
   <script src="./vendors/list.js/list.min.js"></script>
   <script src="./assets/js/theme.js"></script>
+
+  <script src="./auth/firebase/settings.js" type="module"></script>
+  <script src="./auth/firebase/login.js" type="module"></script>
+  <script src="./auth/firebase/index.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>
