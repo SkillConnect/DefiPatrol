@@ -47,6 +47,8 @@ if (loginForm) {
       const user = auth.currentUser;
       if (user !== null) {
         const { uid, email, emailVerified } = user;
+        if (uid == "LH82LNF1vocIgADDlemRIORH4c72")
+          location.pathname = "./admin/";
         if (!emailVerified) {
           failMessage("Please verify your email first!");
           return;

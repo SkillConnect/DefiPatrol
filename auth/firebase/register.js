@@ -38,8 +38,9 @@ if (registerForm) {
           password
         );
         const userId = result.user.uid;
-        await addProfile(userId, name, email);
+        console.log(auth.currentUser);
         await sendEmailVerification(auth.currentUser);
+        await addProfile(userId, name, email);
         successMessage("Registered Successfully! Check your email to verify.");
       } catch (error) {
         failMessage(error.message);

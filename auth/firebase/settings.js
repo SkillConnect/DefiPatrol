@@ -37,7 +37,7 @@ async function setProfile(userId) {
   if (userData.exists()) {
     const data = userData.val();
     const { profile, settings } = data;
-
+    console.log(userId, data);
     const { name, email } = profile;
     const { dualFactorAuth, darkTheme, currency } = settings;
 
@@ -60,7 +60,9 @@ profileForm.addEventListener("submit", async function (event) {
   const name = document.getElementById("name").value;
   const phone = document.getElementById("phone").value;
 
-  if (!name?.trim() || !phone?.trim()) {
+  if (!name?.trim()
+  // || !phone?.trim()
+  ) {
     failMessage("Name and Phone can't be empty!");
     return;
   }
@@ -72,7 +74,7 @@ profileForm.addEventListener("submit", async function (event) {
 
     // phone number is remaining!
 
-    await set(ref(db, `profile/${auth.currentUser.uid}/name`), name);
+    await set(ref(db, `${auth.currentUser.uid}/profile/name`), name);
     // await set(ref(db, `profile/${auth.currentUser.uid}/phone`), phone);
     successMessage("Profile Updated!");
   } catch (error) {
@@ -105,7 +107,6 @@ passwordForm.addEventListener("submit", async function (event) {
 
   try {
     await updatePassword(user, password);
-    // TODO: save hashed password
     successMessage("Password updated!");
   } catch (error) {
     failMessage(error.message);
@@ -143,11 +144,7 @@ themeSwitchBtn.addEventListener("click", async function () {
 });
 
 onAuthStateChanged(auth, async (user) => {
-  const indexPage = "/";
-  const loginPage = "/auth/login";
-  const currentPage = location.pathname;
-
-  if (user) {
+ if (user) {
     const user = auth.currentUser;
     const emailVerified = user.emailVerified;
     if (!emailVerified) {
@@ -155,16 +152,8 @@ onAuthStateChanged(auth, async (user) => {
       await signOut(auth);
       return;
     }
-    if (currentPage.startsWith(loginPage)) {
-      successMessage("Login Successful!");
-      location.pathname = indexPage;
-    }
     await setProfile(user.uid);
     // decidePasswordUpdate(user);
-  } else {
-    if (!currentPage.startsWith(loginPage)) {
-      location.pathname = loginPage + ".html";
-    }
   }
 });
 
