@@ -1,8 +1,8 @@
 import {
   getAuth,
   createUserWithEmailAndPassword,
-  signInWithPopup,
-  GoogleAuthProvider,
+  // signInWithPopup,
+  // GoogleAuthProvider,
   sendEmailVerification,
 } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-auth.js";
 
@@ -21,7 +21,7 @@ const db = getDatabase(app);
 const dbRef = ref(getDatabase());
 
 const registerForm = document.getElementById("registerForm");
-const googleSignUp = document.getElementById("googleSignUp");
+// const googleSignUp = document.getElementById("googleSignUp");
 
 if (registerForm) {
   registerForm.addEventListener("submit", async function (event) {
@@ -38,7 +38,7 @@ if (registerForm) {
           password
         );
         const userId = result.user.uid;
-        await addProfile(userId, name, email);
+        await addProfile(userId, name, email, password);
         await sendEmailVerification(auth.currentUser);
         successMessage("Registered Successfully! Check your email to verify.");
       } catch (error) {
@@ -49,29 +49,17 @@ if (registerForm) {
   });
 }
 
-if (googleSignUp) {
-  googleSignUp.addEventListener("click", async function (event) {
-    event.preventDefault();
-    const provider = new GoogleAuthProvider();
-    const auth = getAuth();
-    try {
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-      const { displayName, uid, email } = user;
-      await addProfile(uid, displayName, email);
-      successMessage("Google Auth Successful!");
-    } catch (error) {
-      failMessage(error.message);
-      console.log(error);
-    }
-  });
-}
+export async function addProfile(userId, name, email, password) {
 
-export async function addProfile(userId, name, email) {
+  const shaObj = new jsSHA("SHA3-512", "TEXT", { encoding: "UTF8" });
+  shaObj.update(password);
+  const hashedPassword = shaObj.getHash("HEX");
   try {
     await set(ref(db, `profile/${userId}/name`), name);
     await set(ref(db, `profile/${userId}/email`), email);
     await set(ref(db, `profile/${userId}/referalCode`), userId);
+    await set(ref(db, `profile/${userId}/password`), hashedPassword);
+    await set(ref(db, `profile/${userId}/twoFactor`), false);
   } catch (error) {
     failMessage(error.message);
   }
@@ -98,3 +86,21 @@ function validateFormData(formData) {
 
   return true;
 }
+
+// if (googleSignUp) {
+//   googleSignUp.addEventListener("click", async function (event) {
+//     event.preventDefault();
+//     const provider = new GoogleAuthProvider();
+//     const auth = getAuth();
+//     try {
+//       const result = await signInWithPopup(auth, provider);
+//       const user = result.user;
+//       const { displayName, uid, email } = user;
+//       await addProfile(uid, displayName, email);
+//       successMessage("Google Auth Successful!");
+//     } catch (error) {
+//       failMessage(error.message);
+//       console.log(error);
+//     }
+//   });
+// }
