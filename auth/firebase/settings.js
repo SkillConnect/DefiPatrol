@@ -26,9 +26,35 @@ const db = getDatabase(app);
 const dbRef = ref(getDatabase());
 
 const auth = getAuth();
-let allowPasswordUpdate = false;
 
 const profileForm = document.getElementById("profileForm");
+const dualFactorBtn = document.getElementById("dualFactorBtn");
+const themeSwitchBtn = document.getElementById("themeSwitchBtn");
+const passwordForm = document.getElementById("updatePasswordForm");
+
+async function setProfile(userId) {
+  const userData = await get(child(dbRef, `${userId}`));
+  if (userData.exists()) {
+    const data = userData.val();
+    const { profile, settings } = data;
+
+    const { name, email } = profile;
+    const { dualFactorAuth, darkTheme, currency } = settings;
+
+    document.getElementById("name").value = name;
+    document.getElementById("email").value = email;
+    if (profile?.phone) {
+      document.getElementById("phone").value = profile.phone;
+    }
+
+    dualFactorBtn.checked = dualFactorAuth;
+    themeSwitchBtn.checked = darkTheme;
+
+  } else {
+    failMessage("Failed to load user data!");
+  }
+}
+
 profileForm.addEventListener("submit", async function (event) {
   event.preventDefault();
   const name = document.getElementById("name").value;
@@ -55,11 +81,8 @@ profileForm.addEventListener("submit", async function (event) {
   }
 });
 
-const passwordForm = document.getElementById("updatePasswordForm");
 passwordForm.addEventListener("submit", async function (event) {
   event.preventDefault();
-
-  if (!allowPasswordUpdate) return;
 
   const user = auth.currentUser;
   const oldPassword = document.getElementById("old-password").value;
@@ -82,9 +105,39 @@ passwordForm.addEventListener("submit", async function (event) {
 
   try {
     await updatePassword(user, password);
+    // TODO: save hashed password
     successMessage("Password updated!");
   } catch (error) {
     failMessage(error.message);
+    console.log(error);
+  }
+});
+
+dualFactorBtn.addEventListener("click", async function () {
+  const checked = dualFactorBtn.checked;
+  const successMsg = checked ? "Dual factor enabled!" : "Dual factor disabled!";
+  const failureMsg = checked
+    ? "Failed to enable dual factor!"
+    : "Failed to disable dual factor";
+  try {
+    await set(
+      ref(db, `${auth.currentUser.uid}/settings/dualFactorAuth`),
+      checked
+    );
+    successMessage(successMsg);
+  } catch (error) {
+    failMessage(failureMsg);
+    console.log(error);
+  }
+});
+
+themeSwitchBtn.addEventListener("click", async function () {
+  const checked = themeSwitchBtn.checked;
+  localStorage.setItem("darkMode", checked);
+  document.getElementById("themeControlToggle").click();
+  try {
+    await set(ref(db, `${auth.currentUser.uid}/settings/darkTheme`), checked);
+  } catch (error) {
     console.log(error);
   }
 });
@@ -107,7 +160,7 @@ onAuthStateChanged(auth, async (user) => {
       location.pathname = indexPage;
     }
     await setProfile(user.uid);
-    decidePasswordUpdate(user);
+    // decidePasswordUpdate(user);
   } else {
     if (!currentPage.startsWith(loginPage)) {
       location.pathname = loginPage + ".html";
@@ -115,28 +168,13 @@ onAuthStateChanged(auth, async (user) => {
   }
 });
 
-async function setProfile(userId) {
-  const userData = await get(child(dbRef, `profile/${userId}`));
-  if (userData.exists()) {
-    const data = userData.val();
-    const { name, email } = data;
-    document.getElementById("name").value = name;
-    document.getElementById("email").value = email;
-    if (data?.phone) {
-      document.getElementById("phone").value = data.phone;
-    }
-  } else {
-    failMessage("Failed to load user data!");
-  }
-}
-
-function decidePasswordUpdate(user) {
-  user.providerData.forEach((profile) => {
-    if (profile.providerId === "password") {
-      allowPasswordUpdate = true;
-      document.getElementById("new-password").disabled = false;
-      document.getElementById("confirm-password").disabled = false;
-      document.getElementById("updatePasswordBtn").disabled = false;
-    }
-  });
-}
+// function decidePasswordUpdate(user) {
+//   user.providerData.forEach((profile) => {
+//     if (profile.providerId === "password") {
+//       allowPasswordUpdate = true;
+//       document.getElementById("new-password").disabled = false;
+//       document.getElementById("confirm-password").disabled = false;
+//       document.getElementById("updatePasswordBtn").disabled = false;
+//     }
+//   });
+// }

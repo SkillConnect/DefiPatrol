@@ -38,7 +38,7 @@ if (registerForm) {
           password
         );
         const userId = result.user.uid;
-        await addProfile(userId, name, email, password);
+        await addProfile(userId, name, email);
         await sendEmailVerification(auth.currentUser);
         successMessage("Registered Successfully! Check your email to verify.");
       } catch (error) {
@@ -49,17 +49,29 @@ if (registerForm) {
   });
 }
 
-export async function addProfile(userId, name, email, password) {
-
-  const shaObj = new jsSHA("SHA3-512", "TEXT", { encoding: "UTF8" });
-  shaObj.update(password);
-  const hashedPassword = shaObj.getHash("HEX");
+export async function addProfile(userId, name, email) {
   try {
-    await set(ref(db, `profile/${userId}/name`), name);
-    await set(ref(db, `profile/${userId}/email`), email);
-    await set(ref(db, `profile/${userId}/referalCode`), userId);
-    await set(ref(db, `profile/${userId}/password`), hashedPassword);
-    await set(ref(db, `profile/${userId}/twoFactor`), false);
+    await set(ref(db, `${userId}/profile`), {
+      name,
+      email,
+      referralCode: userId,
+    });
+
+    await set(ref(db, `${userId}/settings`), {
+      dualFactorAuth: false,
+      darkTheme: false,
+      currency: "USD",
+    });
+
+    await set(ref(db, `${userId}/invites`), {
+      sent: 0, successful: 0, earned: 0, withdrawn: 0
+    });
+
+    await set(ref(db, `${userId}/card`), {
+      number: "", type: "", name: "", expiryDate: ""
+    });
+
+    
   } catch (error) {
     failMessage(error.message);
   }

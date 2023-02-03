@@ -25,8 +25,8 @@ const db = getDatabase(app);
 const dbRef = ref(getDatabase());
 
 const loginForm = document.getElementById("login-form");
-// const googleSignUp = document.getElementById("googleSignUp");
 const logoutBtn = document.getElementById("logoutBtn");
+// const googleSignUp = document.getElementById("googleSignUp");
 
 const auth = getAuth();
 
@@ -38,7 +38,7 @@ if (loginForm) {
 
     const { email, password } = formData;
 
-    if (!email?.trim() || !password?.trim()) {
+    if (!email?.trim() || !password) {
       failMessage("Please provide email and password!");
     }
 
@@ -60,25 +60,19 @@ if (loginForm) {
   });
 }
 
-if (logoutBtn) {
-  logoutBtn.addEventListener("click", async function (event) {
-    event.preventDefault();
-    await signOut(auth);
-    location.pathname = "/auth/login.html";
-  });
-}
-
 async function handleTwoFactor(userId, email) {
-  console.log(userId, email);
-  const userData = await get(child(dbRef, `profile/${userId}`));
+  const userData = await get(child(dbRef, `${userId}/settings`));
+
   if (userData.exists()) {
     const data = userData.val();
-    if (data.twoFactor === true) {
+
+    if (data.dualFactorAuth === true) {
       await signOut(auth);
       const actionCodeSettings = {
         url: "http://127.0.0.1:5500/",
         handleCodeInApp: true,
       };
+
       try {
         await sendSignInLinkToEmail(auth, email, actionCodeSettings);
         successMessage("Email sent for verification");
@@ -89,11 +83,31 @@ async function handleTwoFactor(userId, email) {
     } else {
       successMessage("Logged in!");
       location.pathname = "/";
+      localStorage.setItem("darkMode", data.darkTheme);
+      // if (data.darkTheme === true)
+      //   document.getElementById("themeControlToggle").click();
     }
   } else {
     failMessage("Failed to load user data!");
   }
 }
+
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", async function (event) {
+    event.preventDefault();
+    await signOut(auth);
+    location.pathname = "/auth/login.html";
+  });
+}
+
+onAuthStateChanged(auth, async (user) => {
+
+  if (user) {
+    const theme = localStorage.getItem('darkMode');
+    if (theme == "true") document.getElementById("themeControlToggle").click();
+  }
+
+});
 
 // onAuthStateChanged(auth, async (user) => {
 //   const indexPage = "/";
