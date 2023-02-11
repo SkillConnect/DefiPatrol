@@ -35,23 +35,72 @@
                       </div>
                       <!--/.bg-holder-->
 
-                      <div class="z-index-1 position-relative"><a class="link-light mb-4 font-sans-serif fs-4 d-inline-block fw-bolder" href="../../../index.html">falcon</a>
-                        <p class="opacity-75 text-white">With the power of Falcon, you can now focus only on functionaries for your digital products, while leaving the UI design on us!</p>
+                      <div class="z-index-1 position-relative">
+                        <p class="link-light mb-4 font-sans-serif fs-4 d-inline-block fw-bolder">DefiPatrol</p>
+                        <img src="../assets/img/icon.png" style="max-height: 200px;">
                       </div>
                     </div>
-                    <div class="mt-3 mb-4 mt-md-4 mb-md-5 light">
-                      <p class="mb-0 mt-4 mt-md-5 fs--1 fw-semi-bold text-white opacity-75">Read our <a class="text-decoration-underline text-white" href="#!">terms</a> and <a class="text-decoration-underline text-white" href="#!">conditions </a></p>
-                    </div>
                   </div>
-                  <div class="col-md-7 d-flex flex-center">
+                  <!-- Verify Email -->
+                  <div class="col-md-7 d-flex flex-center  d-none" id="verifyEmail">
                     <div class="p-4 p-md-5 flex-grow-1">
                       <div class="text-center"><img class="d-block mx-auto mb-4" src="../assets/img/icons/spot-illustrations/16.png" alt="Email" width="100" />
                         <h3 class="mb-2">Please check your email!</h3>
-                        <p>An email has been sent to <strong>xyz@abc.com</strong>. Please click on the <br class="d-none d-sm-block d-md-none" />included link to reset your password.
-                        </p><a class="btn btn-primary btn-sm mt-3" href="../../../pages/authentication/card/login.html"><span class="fas fa-chevron-left me-1" data-fa-transform="shrink-4 down-1"></span>Return to login</a>
+                        <p>An email has been sent to <strong id="email">xyz@abc.com</strong>. 
+                          Please click on the <br class="d-none d-sm-block d-md-none" />included link to verify it's you.
+                        </p>
+                        <a class="btn btn-secondary btn-sm mt-3 backBtn">
+                          <span class="fas fa-chevron-left me-1" data-fa-transform="shrink-4 down-1"></span>
+                          Return to login
+                        </a>
+                        <a class="btn btn-primary btn-sm mt-3" onclick="isEmailVerified()">
+                          Continue
+                        </a>
                       </div>
                     </div>
                   </div>
+                  <!-- Verify Email Ends -->
+                  <!-- Opt for Two Factor -->
+                  <div class="col-md-7 d-flex flex-center  d-none" id="OptInTwoFactor">
+                    <div class="p-4 p-md-4 flex-grow-1">
+                      <div class="text-center">
+                        <img class="d-block mx-auto mb-4" src="../assets/img/qr.png" alt="Email" width="100" />
+                        <h3 class="mb-2">Increase your Profile Security</h3>
+                        <p>Opt for Two-Factor Authentication and increase your profile's security.</p>
+                        <a class="btn btn-secondary btn-sm mt-3" href="../index.html">
+                          Skip for now
+                        </a>
+                        <a class="btn btn-primary btn-sm mt-3" onclick="generateQRCode()">
+                          Two-Factor
+                        </a>
+                        <div class="mt-3 mb-0">
+                          <small>* You can always opt for Two-Factor from Profile Settings later.</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Opt for Two Factor Ends -->  
+                  <!-- QR Code -->
+                  <div class="col-md-7 d-flex flex-center" id="QRCode">
+                    <div class="p-4 p-md-4 flex-grow-1">
+                      <div class="text-center">
+                        <div id="qr-code" class="mb-3">
+                          <div class="spinner-grow text-primary d-none" id="qrCodeSpinner" role="spinner"></div>
+                          <img class="d-block mx-auto mb-4" id="qrCode" src="https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=asd" width="200"/>
+                        </div>
+                        <h3 class="mb-2">Scan your Unique Code</h3>
+                        <p>Please scan this code with your Authenticator app.</p>
+
+                        <form class="mb-3" id="verifyTOTP">
+                          <input class="form-control" type="number" name="totp" placeholder="XXX-XXX" />
+                          <div class="mb-3"></div>
+                          <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Verify T-OTP</button>
+                        </form>
+                        <a class="fs--1 text-600 backBtn">Back to Login Page<span class="d-inline-block ms-1">&rarr;</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- QR Code Ends -->                  
                 </div>
               </div>
             </div>
@@ -77,7 +126,9 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="../vendors/list.js/list.min.js"></script>
     <script src="../assets/js/theme.js"></script>
-
+    <!-- Firebase -->
+    <script src="../firebase/index.js" type="module"></script>
+    <script src="../firebase/confirm.js" type="module"></script>
   </body>
 
 </html>

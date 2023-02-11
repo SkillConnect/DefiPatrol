@@ -30,61 +30,80 @@
               <div class="card-body p-0">
                 <div class="row g-0 h-100">
                   <div class="col-md-5 text-center bg-card-gradient">
-                    <div class="position-relative p-4 pt-md-5 pb-md-7 light">
+                    <div class="position-relative p-4 pt-md-5 light">
                       <div class="bg-holder bg-auth-card-shape" style="background-image:url(../assets/img/icons/spot-illustrations/half-circle.png);">
                       </div>
                       <!--/.bg-holder-->
 
-                      <div class="z-index-1 position-relative"><a class="link-light mb-4 font-sans-serif fs-4 d-inline-block fw-bolder" href="../../../index.html">falcon</a>
-                        <p class="opacity-75 text-white">With the power of Falcon, you can now focus only on functionaries for your digital products, while leaving the UI design on us!</p>
+                      <div class="z-index-1 position-relative">
+                        <p class="link-light mb-4 font-sans-serif fs-4 d-inline-block fw-bolder">DefiPatrol</p>
+                        <img src="../assets/img/icon.png" style="max-height: 200px;">
                       </div>
                     </div>
                     <div class="mt-3 mb-4 mt-md-4 mb-md-5 light">
-                      <p class="text-white">Don't have an account?<br><a class="text-decoration-underline link-light" href="../../../pages/authentication/card/register.html">Get started!</a></p>
-                      <p class="mb-0 mt-4 mt-md-5 fs--1 fw-semi-bold text-white opacity-75">Read our <a class="text-decoration-underline text-white" href="#!">terms</a> and <a class="text-decoration-underline text-white" href="#!">conditions </a></p>
+                      <p class="text-white">Don't have an account?</p>
+                      <a class="btn btn-outline-light" href="register.html">Get started!</a>
+                      <p class="mb-0 mt-4 mt-md-5 fs--1 fw-semi-bold text-white opacity-75">Read our 
+                        <a class="text-decoration-underline text-white" data-bs-toggle="modal" data-bs-target="#termsModal" href="#">terms</a> and 
+                        <a class="text-decoration-underline text-white" data-bs-toggle="modal" data-bs-target="#policyModal" href="#">privacy policy </a></p>
                     </div>
                   </div>
-                  <div class="col-md-7 d-flex flex-center">
+                  <!-- Email Password -->
+                  <div class="col-md-7 d-flex flex-center" id="email-password-card">
                     <div class="p-4 p-md-5 flex-grow-1">
                       <div class="row flex-between-center">
                         <div class="col-auto">
                           <h3>Account Login</h3>
                         </div>
                       </div>
-                      <form>
+                      <form id="login-form">
                         <div class="mb-3">
-                          <label class="form-label" for="card-email">Email address</label>
-                          <input class="form-control" id="card-email" type="email" />
+                          <label class="form-label" for="email">Email address</label>
+                          <input class="form-control" id="email" name="email" type="email" required/>
                         </div>
                         <div class="mb-3">
                           <div class="d-flex justify-content-between">
-                            <label class="form-label" for="card-password">Password</label>
+                            <label class="form-label" for="password">Password</label>
                           </div>
-                          <input class="form-control" id="card-password" type="password" />
+                          <input class="form-control" id="password" name="password" type="password" required/>
                         </div>
                         <div class="row flex-between-center">
                           <div class="col-auto">
                             <div class="form-check mb-0">
-                              <input class="form-check-input" type="checkbox" id="card-checkbox" checked="checked" />
-                              <label class="form-check-label mb-0" for="card-checkbox">Remember me</label>
+                              <input class="form-check-input" type="checkbox" id="checkbox" checked="checked" />
+                              <label class="form-check-label mb-0" for="checkbox">Remember me</label>
                             </div>
                           </div>
-                          <div class="col-auto"><a class="fs--1" href="../../../pages/authentication/card/forgot-password.html">Forgot Password?</a></div>
+                          <div class="col-auto"><a class="fs--1" href="forgot-password.html">Forgot Password?</a></div>
                         </div>
                         <div class="mb-3">
-                          <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Log in</button>
+                          <input class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit" value="Log in"/>
                         </div>
                       </form>
-                      <div class="position-relative mt-4">
-                        <hr />
-                        <div class="divider-content-center">or log in with</div>
-                      </div>
-                      <div class="row g-2 mt-2">
-                        <div class="col-sm-6"><a class="btn btn-outline-google-plus btn-sm d-block w-100" href="#"><span class="fab fa-google-plus-g me-2" data-fa-transform="grow-8"></span> google</a></div>
-                        <div class="col-sm-6"><a class="btn btn-outline-facebook btn-sm d-block w-100" href="#"><span class="fab fa-facebook-square me-2" data-fa-transform="grow-8"></span> facebook</a></div>
-                      </div>
                     </div>
                   </div>
+                  <!-- Email Password Ends -->
+
+                  <!-- TOTP -->
+                  <div class="col-md-7 d-flex flex-center d-none" id="totp-card">
+                    <div class="p-4 p-md-5 flex-grow-1">
+                      <div class="row flex-between-center">
+                        <div class="col-auto">
+                          <h3>Dual-Factor Authentication</h3>
+                        </div>
+                      </div>
+                      <form id="totp-form">
+                        <div class="mb-3">
+                          <label class="form-label" for="totp">Enter T-OTP</label>
+                          <input class="form-control" id="totp" name="totp" type="text" required/>
+                        </div>
+                        <div class="mb-3">
+                          <input class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit" value="Verify OTP"/>
+                        </div>
+                      </form>
+                    </div>
+                  </div>                  
+                  <!-- TOTP -->
                 </div>
               </div>
             </div>
@@ -97,6 +116,43 @@
     <!-- ===============================================-->
 
 
+    <script>
+      // Load Terms from dedicated HTML file
+      fetch('terms.html')
+      .then(res => res.text())
+      .then(text => {
+          let modal = document.getElementById('terms-modal-content');
+          if (modal) modal.innerHTML = text;
+      }).catch(e => {console.log(e)})
+
+      // Load Policy from dedicated HTML file
+      fetch('policy.html')
+      .then(res => res.text())
+      .then(text => {
+          let modal = document.getElementById('policy-modal-content');
+          if (modal) modal.innerHTML = text;
+      }).catch(e => {console.log(e)})      
+    </script>
+
+    <!-- TnC Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document" style="max-width: 600px">
+        <div class="modal-content position-relative" id="terms-modal-content">
+          <!-- To be loaded from terms.html -->
+        </div>
+      </div>
+    </div>
+    <!-- TnC Modal Ends -->
+
+    <!-- Policy Modal -->
+    <div class="modal fade" id="policyModal" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document" style="max-width: 600px">
+        <div class="modal-content" id="policy-modal-content">
+          <!-- To be loaded from policy.html -->
+        </div>
+      </div>
+    </div>
+    <!-- Policy Modal Ends -->
 
     <!-- ===============================================-->
     <!--    JavaScripts-->
@@ -110,7 +166,13 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="../vendors/list.js/list.min.js"></script>
     <script src="../assets/js/theme.js"></script>
-
+    <script src="../vendors/swal.js"></script>
+    
+    <!-- Firebase -->
+    <script src="../firebase/index.js" type="module"></script>
+    <script src="../firebase/login.js" type="module"></script>
+    <script src="../vendors/base32.js"></script>
+    <script src="../vendors/sha.js"></script>
   </body>
 
 </html>

@@ -9,9 +9,9 @@ var CONFIG = {
   navbarPosition: 'vertical'
 };
 Object.keys(CONFIG).forEach(function (key) {
-  // if (localStorage.getItem(key) === null) {
+  if (localStorage.getItem(key) === null) {
     localStorage.setItem(key, CONFIG[key]);
-  // }
+  }
 });
 
 if (JSON.parse(localStorage.getItem('isNavbarVerticalCollapsed'))) {
