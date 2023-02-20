@@ -212,22 +212,22 @@
             <div class="card mb-3">
               <div class="card-header bg-light py-2">
                 <div class="d-flex flex-between-center">
-                  <h6 class="mb-0">Top Performers </h6><a class="btn btn-link btn-sm px-0" href="#!">View
-                    Details<span class="fas fa-chevron-right ms-1 fs--2"></span></a>
+                  <h6 class="mb-0">Top Performers <span class="fas fa-info-circle ms-1 text-500" data-bs-toggle="modal" data-bs-target="#info-modal" style="cursor: pointer;"></span></h6>
                 </div>
               </div>
               <div class="card-body py-4">
                 <div class="row g-0">
                   <div class="col-6 col-md-4 border-200 border-bottom border-end pb-4">
-                    <h6 class="pb-1 text-700">Items sold </h6>
-                    <p class="font-sans-serif lh-1 mb-1 fs-2">1,054 </p>
-                    <div class="d-flex align-items-center">
-                      <h6 class="fs--1 text-500 mb-0">13,675 </h6>
+                    <p class="font-sans-serif lh-1 mb-1 fs-2">
+                      <img src="./assets/img/coins/btc.png" style="height: 30px;">
+                      $1,054 
+                    </p>
+                    <div class="d-flex align-items-center ms-4 ps-2">
+                      <h6 class="fs--1 text-500 mb-0">BTC </h6>
                       <h6 class="fs--2 ps-3 mb-0 text-warning"><span class="me-1 fas fa-caret-up"></span>21.8%</h6>
                     </div>
                   </div>
                   <div class="col-6 col-md-4 border-200 border-md-200 border-bottom border-md-end pb-4 ps-3">
-                    <h6 class="pb-1 text-700">Items sold </h6>
                     <p class="font-sans-serif lh-1 mb-1 fs-2">1,054 </p>
                     <div class="d-flex align-items-center">
                       <h6 class="fs--1 text-500 mb-0">13,675 </h6>
@@ -236,7 +236,6 @@
                   </div>
                   <div
                     class="col-6 col-md-4 border-200 border-bottom border-end border-md-end-0 pb-4 pt-4 pt-md-0 ps-md-3">
-                    <h6 class="pb-1 text-700">Refunds </h6>
                     <p class="font-sans-serif lh-1 mb-1 fs-2">$145.65 </p>
                     <div class="d-flex align-items-center">
                       <h6 class="fs--1 text-500 mb-0">13,675 </h6>
@@ -245,7 +244,6 @@
                   </div>
                   <div
                     class="col-6 col-md-4 border-200 border-md-200 border-bottom border-md-bottom-0 border-md-end pt-4 pb-md-0 ps-3 ps-md-0">
-                    <h6 class="pb-1 text-700">Gross sale </h6>
                     <p class="font-sans-serif lh-1 mb-1 fs-2">$100.26 </p>
                     <div class="d-flex align-items-center">
                       <h6 class="fs--1 text-500 mb-0">$109.65 </h6>
@@ -253,7 +251,6 @@
                     </div>
                   </div>
                   <div class="col-6 col-md-4 border-200 border-md-bottom-0 border-end pt-4 pb-md-0 ps-md-3">
-                    <h6 class="pb-1 text-700">Shipping </h6>
                     <p class="font-sans-serif lh-1 mb-1 fs-2">$365.53 </p>
                     <div class="d-flex align-items-center">
                       <h6 class="fs--1 text-500 mb-0">13,675 </h6>
@@ -261,7 +258,6 @@
                     </div>
                   </div>
                   <div class="col-6 col-md-4 pb-0 pt-4 ps-3">
-                    <h6 class="pb-1 text-700">Processing </h6>
                     <p class="font-sans-serif lh-1 mb-1 fs-2">861 </p>
                     <div class="d-flex align-items-center">
                       <h6 class="fs--1 text-500 mb-0">13,675 </h6>
@@ -270,6 +266,28 @@
                   </div>
                 </div>
               </div>
+
+              <!-- Next Prev -->
+              <div class="card-body p-0">
+                <ul class="mb-0 list-unstyled bg-light rounded-3">
+                  <li class="alert mb-0 py-3 px-x1 border-top border-x-0 border-top-0">
+                    <div class="row flex-between-center">
+                      <div class="col">
+                        <a class="alert-link fs--1 fw-medium" href="portfolio.html">
+                          <i class="fas fa-chevron-left ms-1 fs--2"></i> Previous
+                        </a>
+                      </div>
+                      <div class="col-auto d-flex align-items-center">
+                        <a class="alert-link fs--1 fw-medium" href="portfolio.html">
+                          Next <i class="fas fa-chevron-right ms-1 fs--2"></i>
+                        </a>
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>     
+              <!-- Next Prev -->         
             </div>
             <!-- Top Performers Ends -->
 
@@ -277,8 +295,7 @@
             <div class="card">
               <div class="card-header bg-light py-2">
                 <div class="d-flex flex-between-center">
-                  <h6 class="mb-0">Top Losers </h6><a class="btn btn-link btn-sm px-0" href="#!">View
-                    Details<span class="fas fa-chevron-right ms-1 fs--2"></span></a>
+                  <h6 class="mb-0">Top Losers <span class="fas fa-info-circle ms-1 text-500" data-bs-toggle="modal" data-bs-target="#info-modal" style="cursor: pointer;"></span></h6>
                 </div>
               </div>              
               <div class="card-body py-4">
@@ -345,7 +362,7 @@
               <div class="card-header bg-light">
                 <div class="row flex-between-center g-0">
                   <div class="col-auto">
-                    <h6 class="mb-0 fw-medium">Performance Chart</h6>
+                    <h6 class="mb-0 fw-medium">Performance Chart <span class="fas fa-info-circle ms-1 text-500" data-bs-toggle="modal" data-bs-target="#info-modal" style="cursor: pointer;"></span></h6>
                   </div>
                   <div class="col-auto d-flex">
                     <div class="form-check mb-0 d-flex">
@@ -384,7 +401,7 @@
             <div class="card">
               <div class="card-header bg-light py-3">
                 <div class="d-flex flex-between-center">
-                  <h6 class="mb-0 fw-medium">Balances </h6>    
+                  <h6 class="mb-0 fw-medium">Balances <span class="fas fa-info-circle ms-1 text-500" data-bs-toggle="modal" data-bs-target="#info-modal" style="cursor: pointer;"></span></h6>    
                 </div>
               </div>
               <div class="card-body">
@@ -464,7 +481,7 @@
             <div class="card">
               <div class="card-header bg-light py-3">
                 <div class="d-flex flex-between-center">
-                  <h6 class="mb-0 fw-medium">Your NFTs </h6>    
+                  <h6 class="mb-0 fw-medium">Your NFTs <span class="fas fa-info-circle ms-1 text-500" data-bs-toggle="modal" data-bs-target="#info-modal" style="cursor: pointer;"></span></h6>    
                 </div>
               </div>
               <div class="card-body">
@@ -506,7 +523,7 @@
                     </div>                    
                   </div>                  
                 </div>
-                <div class="card rounded-3 shadow-none ">
+                <div class="card rounded-3 shadow-none">
                   <div class="card-body">
                     <div class="text-center">
                       <img class="d-block mx-auto mb-2" src="./assets/img/navbar-vertical-nft.gif" alt="shield" width="200">
@@ -531,7 +548,7 @@
             <div class="card">
               <div class="card-header bg-light py-3">
                 <div class="d-flex flex-between-center">
-                  <h6 class="mb-0 fw-medium">Transactions </h6>    
+                  <h6 class="mb-0 fw-medium">Transactions <span class="fas fa-info-circle ms-1 text-500" data-bs-toggle="modal" data-bs-target="#info-modal" style="cursor: pointer;"></span></h6>    
                 </div>
               </div>
               <div class="card-body">
@@ -543,12 +560,12 @@
                         <th class="text-start">Details</th>
                         <th>Wallet</th>
                         <th>From/To</th>
-                        <th>Gas</th>
+                        <th>Amount</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr class="border-bottom border-200">
-                        <td class="align-middle text-start fw-bold">12th Feb, 2023</td>
+                        <td class="align-middle text-start fw-bold">15th Feb, 2023</td>
                         <td>
                           <div class="d-flex align-items-center position-relative">
                             <i class="fas fa-exchange-alt fa-2x"></i>
@@ -558,21 +575,21 @@
                             </div>
                           </div>
                         </td>
-                        <td class="align-middle text-center fw-bold">
-                          <a role="button" class="badge badge-soft-secondary border-0 rounded-pill" 
-                            data-bs-placement="bottom" data-bs-trigger="focus" tabindex="0"
-                            data-bs-toggle="popover" data-bs-content="1FfmbHfnpaZjKFvyi1okTjJJusN455paPH">
-                            1FfmbHfnpaZjKFvyi1...
-                          </a>
-                          <span class="far fa-copy ms-2" role="button"></span>
+                        <td class="align-middle text-center">
+                          <h6>
+                            <span role="button" class="badge badge-soft-secondary border-0 rounded-pill"
+                            data-bs-toggle="tooltip" title="1FfmbHfnpaZjKFvyi1okTjJJusN455paPH">
+                            1FfmbHfnpaZjKFvyi1...</span>
+                            <span class="far fa-copy ms-2" role="button"></span>
+                          </h6>
                         </td>
                         <td class="align-middle text-center fw-bold">
-                          <a role="button" class="badge badge-soft-secondary border-0 rounded-pill" 
-                            data-bs-placement="bottom" data-bs-trigger="focus" tabindex="0"
-                            data-bs-toggle="popover" data-bs-content="1FfmbHfnpaZjKFvyi1okTjJJusN455paPH">
-                            1FfmbHfnpaZjKFvyi1...
-                          </a>
-                          <span class="far fa-copy ms-2" role="button"></span>
+                          <h6>
+                            <span role="button" class="badge badge-soft-secondary border-0 rounded-pill"
+                            data-bs-toggle="tooltip" title="1FfmbHfnpaZjKFvyi1okTjJJusN455paPH">
+                            1FfmbHfnpaZjKFvyi1...</span>
+                            <span class="far fa-copy ms-2" role="button"></span>
+                          </h6>
                         </td>
                         <td class="align-middle px-4 text-end text-nowrap" style="width:1%;">
                           <h6 class="mb-0">$290.00 USD</h6>
@@ -591,20 +608,20 @@
                           </div>
                         </td>
                         <td class="align-middle text-center fw-bold">
-                          <a role="button" class="badge badge-soft-secondary border-0 rounded-pill" 
-                            data-bs-placement="bottom" data-bs-trigger="focus" tabindex="0"
-                            data-bs-toggle="popover" data-bs-content="1FfmbHfnpaZjKFvyi1okTjJJusN455paPH">
-                            1FfmbHfnpaZjKFvyi1...
-                          </a>
-                          <span class="far fa-copy ms-2" role="button"></span>
+                          <h6>
+                            <span role="button" class="badge badge-soft-secondary border-0 rounded-pill"
+                            data-bs-toggle="tooltip" title="1FfmbHfnpaZjKFvyi1okTjJJusN455paPH">
+                            1FfmbHfnpaZjKFvyi1...</span>
+                            <span class="far fa-copy ms-2" role="button"></span>
+                          </h6>
                         </td>
                         <td class="align-middle text-center fw-bold">
-                          <a role="button" class="badge badge-soft-secondary border-0 rounded-pill" 
-                            data-bs-placement="bottom" data-bs-trigger="focus" tabindex="0"
-                            data-bs-toggle="popover" data-bs-content="1FfmbHfnpaZjKFvyi1okTjJJusN455paPH">
-                            1FfmbHfnpaZjKFvyi1...
-                          </a>
-                          <span class="far fa-copy ms-2" role="button"></span>
+                          <h6>
+                            <span role="button" class="badge badge-soft-secondary border-0 rounded-pill"
+                            data-bs-toggle="tooltip" title="1FfmbHfnpaZjKFvyi1okTjJJusN455paPH">
+                            1FfmbHfnpaZjKFvyi1...</span>
+                            <span class="far fa-copy ms-2" role="button"></span>
+                          </h6>
                         </td>
                         <td class="align-middle px-4 text-end text-nowrap" style="width:1%;">
                           <h6 class="mb-0">$290.00 USD</h6>
@@ -632,7 +649,7 @@
             <div class="card">
               <div class="card-header bg-light py-3">
                 <div class="d-flex flex-between-center">
-                  <h6 class="mb-0 fw-medium">Trending Crypto Currency </h6>    
+                  <h6 class="mb-0 fw-medium">Trending Cryptocurrencies <span class="fas fa-info-circle ms-1 text-500" data-bs-toggle="modal" data-bs-target="#info-modal" style="cursor: pointer;"></span></h6>    
                 </div>
               </div>
               <div class="card-body">
@@ -685,7 +702,10 @@
               </div>
               <div class="card-footer bg-light py-2">
                 <div class="row flex-between-center">
-                  <div class="col-auto"><a class="btn btn-sm btn-link px-0 fw-medium" href="#!">View All<svg class="svg-inline--fa fa-chevron-right fa-w-10 ms-1 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg><!-- <span class="fas fa-chevron-right ms-1 fs--2"></span> Font Awesome fontawesome.com --></a></div>
+                  <div class="col-auto"><a class="btn btn-sm btn-link px-0 fw-medium" href="#!">View All
+                     <span class="fas fa-chevron-right ms-1 fs--2"></span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>          
@@ -697,7 +717,7 @@
             <div class="card">
               <div class="card-header bg-light py-3">
                 <div class="d-flex flex-between-center">
-                  <h6 class="mb-0 fw-medium">Trending NFTs </h6>    
+                  <h6 class="mb-0 fw-medium">Trending NFTs <span class="fas fa-info-circle ms-1 text-500" data-bs-toggle="modal" data-bs-target="#info-modal" style="cursor: pointer;"></span></h6>    
                 </div>
               </div>
               <div class="card-body">
@@ -816,7 +836,14 @@
                   <div class="tab-pane fade" id="tab-nft" role="tabpanel" aria-labelledby="contact-tab">Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</div>
                 </div>
               </div>
-              <div class="card-footer bg-light p-0 border-top"><a class="btn btn-link d-block w-100" href="app/events/event-list.html">All Events<svg class="svg-inline--fa fa-chevron-right fa-w-10 ms-1 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg><!-- <span class="fas fa-chevron-right ms-1 fs--2"></span> Font Awesome fontawesome.com --></a></div>
+              <div class="card-footer bg-light py-2">
+                <div class="row flex-between-center">
+                  <div class="col-auto"><a class="btn btn-sm btn-link px-0 fw-medium" href="#!">View All
+                     <span class="fas fa-chevron-right ms-1 fs--2"></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <!-- News Ends -->
@@ -884,7 +911,7 @@
                 <div class="text-center">
                   <i class="far fa-star fa-2x mt-4 mb-3 text-warning" ></i>
                   <h4>Your Watchlist is empty!</h4>
-                  <a class="btn btn-primary my-3" href="watchlist.html">
+                  <a class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#create-watchlist">
                     Create Watchlist
                   </a>
                 </div>
@@ -917,6 +944,64 @@
   <!-- ===============================================-->
   <!--    End of Main Content-->
   <!-- ===============================================-->
+
+  <!-- Create Watchlist -->
+  <div class="modal fade" id="create-watchlist" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+      <div class="modal-content position-relative">
+        <div class="position-absolute top-0 end-0 mt-2 me-2 z-index-1">
+          <button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <div class="rounded-top-lg py-3 ps-4 pe-6 bg-light">
+            <h4 class="mb-1 text-center" id="modalExampleDemoLabel">Confirm Action </h4>
+          </div>
+          <div class="px-4">
+            <form>
+              <div class="mb-3 py-3">
+                <label class="col-form-label" for="recipient-name">Search Token:</label>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Select Coins/Tokens/NFTs</option>
+                  <option value="1">Bitcoin (BTC)</option>
+                  <option value="2">Ethereum (ETH)</option>
+                  <option value="3">Others...</option>
+                </select>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a class="btn btn-secondary" type="button" href="watchlist.html">View Watchlist</a>
+          <button class="btn btn-primary" type="button">Add to Watchlist </button>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <!-- Create Watchlist Ends -->
+
+  <!-- Info -->
+  <div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+      <div class="modal-content position-relative">
+        <div class="position-absolute top-0 end-0 mt-2 me-2 z-index-1">
+          <button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <div class="rounded-top-lg py-3 ps-4 pe-6 bg-light">
+            <h4 class="mb-1 text-center" id="modalExampleDemoLabel">Info </h4>
+          </div>
+          <div class="p-4">
+            Some description about the property
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Got it </button>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <!-- Info Ends -->
+
 
   <!--    JavaScripts-->
   <script src="./vendors/popper/popper.min.js"></script>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DefiPatrol</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <meta name="theme-color" content="#ffffff">
+  <script src="./assets/js/config.js"></script>
+  <script src="./vendors/simplebar/simplebar.min.js"></script>
+  <!-- Stylesheets-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap"
+    rel="stylesheet">
+  <link href="./vendors/simplebar/simplebar.min.css" rel="stylesheet">
+  <link href="./assets/css/theme.min.css" rel="stylesheet">
+  <link href="./assets/css/user.css" rel="stylesheet">
+</head>
+
+<body>
+  <main class="main" id="top">
+    <div class="container" data-layout="container">
+      <script>
+        var isFluid = JSON.parse(localStorage.getItem('isFluid'));
+        if (isFluid) {
+          var container = document.querySelector('[data-layout]');
+          container.classList.remove('container');
+          container.classList.add('container-fluid');
+        }
+      </script>
+      <nav class="navbar navbar-light navbar-vertical navbar-transparent navbar-expand-xl">
+        <!-- Navbar -->
+        <div id="navbarPlaceholder"></div>
+        <!-- Navbar -->
+      </nav>
+
+      <div class="content">
+        <!-- TopBar -->
+        <div id="topbarPlaceholder"></div>
+        <!-- TopBar -->
+
+        <div class="d-flex mb-3 mt-3">
+          <span class="fa-stack me-2 ms-n1"><i class="fa-inverse fa-stack-1x text-primary fas fa-chevron-left"></i></span>
+          <div class="col">
+            <h5 class="mb-2 text-primary position-relative">
+              <span class="bg-200 dark__bg-1100 pe-3">Portfolio</span>
+              <span class="border position-absolute top-50 translate-middle-y w-100 start-0 z-index--1"></span>
+            </h5>
+            <p class="mb-0">
+              <img src="./assets/img/coins/eth.png" style="max-height: 25px;margin-bottom: 8px;" class="me-1">
+              <span class="fs-2 fw-bold">ETH</span>
+              Ethereum
+              <span class="far fa-star ms-2"></span>
+              <img src="./assets/img/blockexplorer.svg" style="max-height: 20px;" class="ms-2">
+              <span class="fas fa-sync-alt ms-2"></span>
+            </p>
+          </div>
+        </div>
+
+        <div class="row g-3 mb-3">
+          <div class="col-lg-8">
+            <div class="card h-100">
+              <div class="card-header">
+                <div class="row flex-between-center">
+                  <div class="col-auto">
+                    <h6 class="mb-2">Candle Chart</h6>
+                  </div>
+                  <div class="col-auto mt-2">
+                    <div class="row g-sm-4">
+                      <div class="col-12 col-sm-auto">
+                        <div class="mb-3 pe-4 border-sm-end border-200">
+                          <h6 class="fs--2 text-600 mb-1">Forecast Hours</h6>
+                          <div class="d-flex align-items-center">
+                            <h5 class="fs-0 text-900 mb-0 me-2">2077h</h5><span class="badge rounded-pill badge-soft-primary"><svg class="svg-inline--fa fa-caret-up fa-w-10" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg><!-- <span class="fas fa-caret-up"></span> Font Awesome fontawesome.com --> 20.2%</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-auto">
+                        <div class="mb-3 pe-4 border-sm-end border-200">
+                          <h6 class="fs--2 text-600 mb-1">Workflow Hours</h6>
+                          <div class="d-flex align-items-center">
+                            <h5 class="fs-0 text-900 mb-0 me-2">100h</h5><span class="badge rounded-pill badge-soft-success"><svg class="svg-inline--fa fa-caret-up fa-w-10" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg><!-- <span class="fas fa-caret-up"></span> Font Awesome fontawesome.com --> 20%</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-auto">
+                        <div class="mb-3 pe-0">
+                          <h6 class="fs--2 text-600 mb-1">Forecast Income</h6>
+                          <div class="d-flex align-items-center">
+                            <h5 class="fs-0 text-900 mb-0 me-2">$256,489</h5><span class="badge rounded-pill badge-soft-primary"><svg class="svg-inline--fa fa-caret-up fa-w-10" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg><!-- <span class="fas fa-caret-up"></span> Font Awesome fontawesome.com --> 18%</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body pe-0 position-relative" id="candle-chart" dir="ltr">
+                <div class="btn-group position-absolute z-index-1 top-0 d-inline-block" role="group" style="left:20px;right:20px;"><button class="btn btn-falcon-default btn-sm mb-1" data-zoom="in"><svg class="svg-inline--fa fa-plus fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <span class="fas fa-plus"></span> Font Awesome fontawesome.com --></button><button class="btn btn-falcon-default btn-sm mb-1" data-zoom="out"><svg class="svg-inline--fa fa-minus fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <span class="fas fa-minus"></span> Font Awesome fontawesome.com --></button></div><!-- Find the JS file for the following calendar at: src/js/charts/echarts/candle-chart.js-->
+                <!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js-->
+                <div class="echart-candle-chart" data-echart-responsive="true" data-action-target="candle-chart" _echarts_instance_="ec_1676717038498" style="user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;"><div style="position: relative; width: 668px; height: 400px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="1202" height="719" style="position: absolute; left: 0px; top: 0px; width: 668px; height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class="" style="position: absolute; display: block; border-style: solid; white-space: nowrap; z-index: 9999999; box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 10px; transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1) 0s, visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1) 0s, transform 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgb(249, 250, 253); border-width: 1px; border-radius: 4px; color: rgb(11, 23, 39); font: 14px / 21px sans-serif; padding: 7px 10px; top: 0px; left: 0px; transform: translate3d(494px, -116px, 0px); border-color: rgb(216, 226, 239); pointer-events: none; visibility: hidden; opacity: 0;"><div style="margin: 0px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><div style="font-size:14px;color:#0b1727;font-weight:400;line-height:1;">2013/4/10</div><div style="margin: 10px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#f5803e;"></span><span style="font-size:14px;color:#0b1727;font-weight:400;margin-left:2px">candlestick</span><span style="float:right;margin-left:20px;font-size:14px;color:#0b1727;font-weight:900"></span><div style="clear:both"></div></div><div style="margin: 10px 0 0;line-height:1;"><span style="display:inline-block;vertical-align:middle;margin-right:8px;margin-left:3px;border-radius:4px;width:4px;height:4px;background-color:#f5803e;"></span><span style="font-size:14px;color:#0b1727;font-weight:400;margin-left:2px">open</span><span style="float:right;margin-left:20px;font-size:14px;color:#0b1727;font-weight:900">2,224.93</span><div style="clear:both"></div></div><div style="margin: 10px 0 0;line-height:1;"><span style="display:inline-block;vertical-align:middle;margin-right:8px;margin-left:3px;border-radius:4px;width:4px;height:4px;background-color:#f5803e;"></span><span style="font-size:14px;color:#0b1727;font-weight:400;margin-left:2px">close</span><span style="float:right;margin-left:20px;font-size:14px;color:#0b1727;font-weight:900">2,226.13</span><div style="clear:both"></div></div><div style="margin: 10px 0 0;line-height:1;"><span style="display:inline-block;vertical-align:middle;margin-right:8px;margin-left:3px;border-radius:4px;width:4px;height:4px;background-color:#f5803e;"></span><span style="font-size:14px;color:#0b1727;font-weight:400;margin-left:2px">lowest</span><span style="float:right;margin-left:20px;font-size:14px;color:#0b1727;font-weight:900">2,212.56</span><div style="clear:both"></div></div><div style="margin: 10px 0 0;line-height:1;"><span style="display:inline-block;vertical-align:middle;margin-right:8px;margin-left:3px;border-radius:4px;width:4px;height:4px;background-color:#f5803e;"></span><span style="font-size:14px;color:#0b1727;font-weight:400;margin-left:2px">highest</span><span style="float:right;margin-left:20px;font-size:14px;color:#0b1727;font-weight:900">2,233.04</span><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="clear:both"></div></div></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-header bg-light btn-reveal-trigger d-flex flex-between-center">
+                <h6 class="mb-0 fw-medium">Token Details</h6>
+              </div>
+              <div class="card-body">
+                <table class="table table-borderless fs--1 mb-0">
+                  <tbody>
+                    <tr class="border-bottom">
+                      <th class="ps-0 pt-0">Market Cap</th>
+                      <th class="pe-0 text-end pt-0">$1345</th>
+                    </tr>
+                    <tr class="border-bottom">
+                      <th class="ps-0">Subtotal</th>
+                      <th class="pe-0 text-end">$3355</th>
+                    </tr>
+                    <tr class="border-bottom">
+                      <th class="ps-0">Subtotal</th>
+                      <th class="pe-0 text-end">$3355</th>
+                    </tr>
+                    <tr class="border-bottom">
+                      <th class="ps-0">Subtotal</th>
+                      <th class="pe-0 text-end">$3355</th>
+                    </tr>                                        
+                    <tr class="border-bottom">
+                      <th class="ps-0">Coupon: <span class="text-success">40SITEWIDE</span></th>
+                      <th class="pe-0 text-end">-$55</th>
+                    </tr>
+                    <tr class="border-bottom">
+                      <th class="ps-0">Shipping</th>
+                      <th class="pe-0 text-end">$20</th>
+                    </tr>
+                    <tr>
+                      <th class="ps-0 pb-0">Total</th>
+                      <th class="pe-0 text-end pb-0">$3320</th>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer d-flex justify-content-between bg-light">
+                <div class="fw-semi-bold">Payable Total</div>
+                <div class="fw-bold">$3320</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-8">
+            <div class="card">
+              <div class="card-header bg-light btn-reveal-trigger d-flex flex-between-center">
+                <h6 class="mb-0 fw-medium">My Holdings <span class="fas fa-info-circle ms-1 text-500"></span></h6>
+                <h6 class="mb-0 fs-0 fw-semi-bold">$2,345</h6>
+              </div>
+              <div class="card-body">
+                <table class="table table-borderless fs--1 mb-0">
+                  <tbody>
+                    <tr>
+                      <td class="name px-2">
+                        <div class="d-flex align-items-center position-relative">
+                          <div class="avatar avatar-xl">
+                            <img class="rounded-circle" src="./assets/img/coins/eth.png" alt="">
+                          </div>
+                          <div class="flex-1 ms-2">
+                            <h6 class="mb-0 fw-semi-bold text-900">ETH</h6>
+                            <p class="mb-0 fw-medium text-900">Ethereum</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="pe-0 text-end">
+                        <span class="fw-bold">$1345</span> <br>
+                        <span class="fw-semi-bold">0.0021313 ETH</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="row g-0 justify-content-between fs--1 mt-4 mb-3">
+            <div class="col-12 text-center">
+              <p class="mb-0 text-600">Made with <span class="far fa-heart"></span> by <a href="https://moneypatrol.com">MoneyPatrol</a></p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </main>
+  <!-- ===============================================-->
+  <!--    End of Main Content-->
+  <!-- ===============================================-->
+
+  <!--    JavaScripts-->
+  <script src="./vendors/popper/popper.min.js"></script>
+  <script src="./vendors/bootstrap/bootstrap.min.js"></script>
+  <script src="./vendors/anchorjs/anchor.min.js"></script>
+  <script src="./vendors/is/is.min.js"></script>
+  <script src="./vendors/chart/chart.min.js"></script>
+  <script src="./vendors/countup/countUp.umd.js"></script>
+  <script src="./vendors/echarts/echarts.min.js"></script>
+  <script src="./vendors/dayjs/dayjs.min.js"></script>
+  <script src="./vendors/fontawesome/all.min.js"></script>
+  <script src="./vendors/lodash/lodash.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+  <script src="./vendors/list.js/list.min.js"></script>
+  <script src="./assets/js/theme.js"></script>
+</body>
+
+</html>
