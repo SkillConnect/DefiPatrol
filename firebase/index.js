@@ -2,8 +2,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebas
 import { signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-auth.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-auth.js";
 
-import * as Swal from '../vendors/swal.js'
-
 const firebaseConfig = {
   apiKey: "AIzaSyD5I8ORlh2shbajxqP3nTwgSM5TnH5UAEs",
   authDomain: "defi-patrol.firebaseapp.com",
@@ -18,8 +16,8 @@ const auth = getAuth();
 
 export const PAGES = {
   HOME_PAGE: 'index.html',
-  LOGIN_PAGE: '/auth/login.html',
-  CONFIRM_PAGE: '/auth/confirm-mail.html',
+  LOGIN_PAGE: '../auth/login.html',
+  CONFIRM_PAGE: '../auth/confirm-mail.html',
   AUTH_PAGES_PREFIX: '/auth',
 }
 
@@ -30,64 +28,26 @@ export const PAGES = {
 onAuthStateChanged(auth, async (user) => {
   const currentPage = location.pathname;
   const isAuthPage = currentPage.includes(PAGES.AUTH_PAGES_PREFIX)
-  const isLoggedIn = localStorage.getItem("isLoggedIn") || false;
-  
+  const isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
+
+  // Handle Auth Pages
+  if (isAuthPage) {
+    if (user && isLoggedIn) { location.pathname = PAGES.HOME_PAGE; }
+    if (currentPage.includes('login')) {}
+    else if (currentPage.includes('register')) {}
+    else if (currentPage.includes('forget-password')) {}
+    else if (currentPage.includes('confirm-mail')) {
+      if (!user) location.pathname = PAGES.LOGIN_PAGE;
+    }
+  }
   // If logged in, load profile config and redirect to home page
-  if (user && isLoggedIn) {
+  else if (user && isLoggedIn) {
     const theme = localStorage.getItem('darkMode');
     if (theme == "true") document.getElementById("themeControlToggle").click();
   } 
   // Otherwise redirect to Auth Pages
-  else if (!isAuthPage) { location.pathname = PAGES.LOGIN_PAGE; }
+  else { location.pathname = PAGES.LOGIN_PAGE; }
 });
-
-
-// ------------------------
-// Two Factor & Email Verification
-// ------------------------
-async function isEmailVerified() {
-  const user = auth.currentUser;
-  const emailVerified = user.emailVerified;
-  if (!emailVerified) {
-    await failMessage("Please verify your email first!");
-    location.pathname = 'confirm-mail.html';
-  }  
-}
-
-function isTwoFactorEnabled() {
-
-}
-
-// Assuming we're in Auth Pages
-async function handleLoginFlow() {
-  // Check if User Email is Verified
-  isEmailVerified()
-  // Check if User has opted for Two Factor
-  // Redirect to Home Page
-  location.pathname = PAGES.HOME_PAGE;
-}
-
-async function handleTwoFactor(userId) {
-  const userData = await get(child(dbRef, `${userId}/settings`));
-  if (userData.exists()) {
-    const data = userData.val();
-    if (data.dualFactorAuth) {
-      toggleTwoFactor()
-      localStorage.setItem("isLoggedIn", false);
-    } else {
-      localStorage.setItem("isLoggedIn", true);
-      location.pathname = PAGES.HOME_PAGE;
-    }
-  } else {
-    failMessage("Failed to load user data!");
-  }
-}
-
-async function toggleTwoFactor() {
-  document.getElementById("email-password-card").classList.toggle("d-none")
-  document.getElementById("totp-card").classList.toggle("d-none")
-}
-
 
 // ------------------------
 // Log out function
@@ -109,6 +69,8 @@ window.logOut = logOut
 // ------------------------
 // Swal Messages
 // ------------------------
+import * as Swal from '../vendors/swal.js'
+
 window.failMessage = (err) => {
   return Sweetalert2.fire({
     icon: "error",

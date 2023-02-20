@@ -45,7 +45,7 @@
 
 
         <div class="d-flex mb-4 mt-3">
-          <span class="fa-stack me-2 ms-n1"><i class="fa-inverse fa-stack-1x text-primary fas fa-wallet"></i></span>
+          <span class="fa-stack me-2 ms-n1"><i class="fa-inverse fa-stack-1x text-primary fas fa-exchange-alt"></i></span>
           <div class="col">
             <h5 class="mb-0 text-primary position-relative"><span class="bg-200 dark__bg-1100 pe-3">Transactions</span>
               <span class="border position-absolute top-50 translate-middle-y w-100 start-0 z-index--1"></span></h5>
@@ -56,113 +56,150 @@
         <div class="row g-3">
           <div class="col">
             <div class="card">
-              <div class="card-header py-3 border-bottom">
-                <div class="d-flex flex-between-center">
-                  <div class="form-check form-switch">
-                    <label class="form-check-label" for="flexSwitchCheckChecked">Hide unverified</label>
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                    <span class="fas fa-info-circle ms-1 text-500" data-bs-toggle="modal" data-bs-target="#info-modal" style="cursor: pointer;"></span>
+              <div class="card-header pt-3 pb-2 px-2 px-lg-3 mx-0 mx-lg-1 border-bottom">
+                <div class="row justify-content-between">
+                  <div class="col-auto ms-2">
+                    <div class="form-check form-switch">
+                      <label class="form-check-label" for="flexSwitchCheckChecked">Hide unverified</label>
+                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                      <span class="fas fa-info-circle ms-1 text-500" data-bs-toggle="modal" data-bs-target="#info-modal" style="cursor: pointer;"></span>
+                    </div>
                   </div>
-                  <h6 class="mb-0 fw-medium">
-                    <button class="btn btn-light border">
-                      <span class="d-none d-md-inline">Download PDF</span>
-                      <span class="fas fa-download ms-1"></span>
-                    </button>
-                  </h6>    
+                  <div class="col-auto d-flex align-items-center mb-2 me-2">
+                    <div class="dropdown d-none d-md-flex">
+                      <button class="btn btn-sm btn-falcon-default dropdown-toggle dropdown-caret-none" type="button" id="ticket-layout" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent">
+                        <span class="me-1">Download</span>
+                        <span class="fas fa-chevron-down" data-fa-transform="shrink-3 down-1"></span>
+                      </button>
+                      <div class="dropdown-menu dropdown-toggle-item dropdown-menu-end border py-2" aria-labelledby="ticket-layout" style="min-width: 120px !important;">
+                        <a class="dropdown-item" href="!#">PDF <span class="far fa-file-pdf text-danger ms-1"></span></a>
+                        <a class="dropdown-item" href="!#">Excel <span class="fas fa-file-excel text-success ms-1"></span></a>
+                      </div>
+                    </div>
+                    <a class="btn btn-sm btn-falcon-default ms-2 d-none d-md-flex" href="tax-report.html">Calculate Taxes</a>
+
+                    <div class="dropdown font-sans-serif d-md-none">
+                      <button class="btn btn-falcon-default text-600 btn-sm dropdown-toggle dropdown-caret-none" type="button" id="dropdown-transaction-summary" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false">
+                        <span class="fas fa-ellipsis-h fs--2"></span>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="dropdown-transaction-summary">
+                        <a class="dropdown-item" href="!#">PDF <span class="far fa-file-pdf text-danger ms-1"></span></a>
+                        <a class="dropdown-item" href="!#">Excel <span class="fas fa-file-excel text-success ms-1"></span></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#!">Calculate Taxes</a>
+                      </div>
+                    </div>                    
+                  </div>
                 </div>
               </div>
-              <div class="card-body" style="min-height: 500px;">
-                <div class="border border-300 rounded-3 mt-2 mx-2">
-                  <table class="table table-hover table-striped mb-0 fs--1 overflow-hidden">
-                    <thead class="bg-200">
-                      <tr class="text-900 text-center">
-                        <th class="text-start">Date</th>
-                        <th>Transaction</th>
-                        <th class="text-start d-none d-lg-table-cell">Details</th>
-                        <th class="d-none d-lg-table-cell">Wallet</th>
-                        <th class="d-none d-lg-table-cell">From/To</th>
-                        <th>Amount</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr class="border-bottom border-200" data-bs-toggle="modal" data-bs-target="#info-modal">
-                        <td class="align-middle text-start fw-bold">15 Feb, 2023</td>
-                        <td class="align-middle text-center">
-                          <span class="far fa-arrow-alt-circle-down fa-2x text-success me-1 mt-2"></span>
-                          <img src="./assets/img/coins/btc.png" style="max-height: 26px; margin-bottom: 13px;">
-                        </td>                        
-                        <td class="align-middle d-none d-lg-table-cell">
-                          <div class="d-flex align-items-center position-relative">
-                            <i class="fas fa-exchange-alt fs-2 mb-2"></i>
-                            <div class="flex-1 ms-3">
-                              <h6 class="mb-0 fw-semi-bold text-900">Contract Call</h6>
-                              <p class="mb-0 fw-medium text-900">08:00 pm</p>
-                            </div>
+              <div class="card-body px-2 px-lg-3 mx-1" style="min-height: 500px;">
+                <div class="mx-1 mx-lg-2">
+                  <div id="tableExample3" data-list='{"valueNames":["date","transaction","wallet", "from", "amount"],"page":5,"pagination":true}'>
+                    <div class="row justify-content-end g-0">
+                      <div class="col-12 col-md-4 mb-3">
+                        <form>
+                          <div class="input-group"><input class="form-control form-control-sm shadow-none search" type="search" placeholder="Search..." aria-label="search" />
+                            <div class="input-group-text bg-transparent"><span class="fa fa-search fs--1 text-600"></span></div>
                           </div>
-                        </td>
-                        <td class="align-middle text-center d-none d-lg-table-cell">
-                          <h5>
-                            <span role="button" class="badge badge-soft-secondary border-0 rounded-pill text-900" style="font-weight: 500px; font-size: 0.625em"
-                            data-bs-toggle="tooltip" title="1FfmbHfnpaZjKFvyi1okTjJJusN455paPH">
-                            <img src="./assets/img/coins/eth.png" style="max-height: 20px;" class="me-1">
-                            1FfmbHfnpaZjKFvyi1...</span>
-                            <span class="far fa-copy fs--1 ms-2" role="button"></span>
-                          </h5>
-                        </td>
-                        <td class="align-middle text-center fw-bold d-none d-lg-table-cell">
-                          <h5>
-                            <span role="button" class="badge badge-soft-secondary border-0 rounded-pill text-900" style="font-weight: 500px; font-size: 0.625em"
-                            data-bs-toggle="tooltip" title="1FfmbHfnpaZjKFvyi1okTjJJusN455paPH">
-                            <img src="./assets/img/coins/eth.png" style="max-height: 20px;" class="me-1">
-                            1FfmbHfnpaZjKFvyi1...</span>
-                            <span class="far fa-copy fs--1 ms-2" role="button"></span>
-                          </h5>
-                        </td>
-                        <td class="align-middle px-4 text-end text-nowrap" style="width:1%;">
-                          <h6 class="mb-0">$290.00 USD</h6>
-                          <p class="fs--2 mb-0">15 May, 2020</p>
-                        </td>
-                      </tr>  
-                      <tr class="border-bottom border-200" data-bs-toggle="modal" data-bs-target="#info-modal">
-                        <td class="align-middle text-start fw-bold">12 Feb, 2023</td>
-                        <td  class="align-middle text-center">
-                          <span class="far fa-arrow-alt-circle-up fa-2x text-danger me-1 mt-2"></span>
-                          <img src="./assets/img/coins/eth.png" style="max-height: 26px; margin-bottom: 13px;">
-                        </td>                          
-                        <td class="align-middle d-none d-lg-table-cell">
-                          <div class="d-flex align-items-center position-relative">
-                            <i class="fas fa-exchange-alt fs-2 mb-2"></i>
-                            <div class="flex-1 ms-3">
-                              <h6 class="mb-0 fw-semi-bold text-900">Contract Call</h6>
-                              <p class="mb-0 fw-medium text-900">08:00 pm</p>
-                            </div>
-                          </div>
-                        </td>                      
-                        <td class="align-middle text-center fw-bold d-none d-lg-table-cell">
-                          <h5>
-                            <span role="button" class="badge badge-soft-secondary border-0 rounded-pill text-900" style="font-weight: 500px; font-size: 0.625em"
-                            data-bs-toggle="tooltip" title="ZjKFvyi1okTjJJusN455paPH">
-                            <img src="./assets/img/coins/eth.png" style="max-height: 20px;" class="me-1">
-                            1FfmbHfnpaZjKFvyi1...</span>
-                            <span class="far fa-copy ms-2 fs--1" role="button"></span>
-                          </h5>
-                        </td>                        
-                        <td class="align-middle text-center fw-bold d-none d-lg-table-cell">
-                          <h5>
-                            <span role="button" class="badge badge-soft-secondary border-0 rounded-pill text-900" style="font-weight: 500px; font-size: 0.625em"
-                            data-bs-toggle="tooltip" title="ZjKFvyi1okTjJJusN455paPH">
-                            <img src="./assets/img/coins/eth.png" style="max-height: 20px;" class="me-1">
-                            1FfmbHfnpaZjKFvyi1...</span>
-                            <span class="far fa-copy ms-2 fs--1" role="button"></span>
-                          </h5>
-                        </td>
-                        <td class="align-middle px-4 text-end text-nowrap" style="width:1%;">
-                          <h6 class="mb-0">$290.00 USD</h6>
-                          <p class="fs--2 mb-0">15 May, 2020</p>
-                        </td>
-                      </tr>                                          
-                    </tbody>
-                  </table>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="table-responsive scrollbar border border-300 rounded-3">
+                      <table class="table table-hover table-striped fs--1 mb-0">
+                        <thead class="bg-200 text-900 text-center">
+                          <tr>
+                            <th class="sort text-start" data-sort="date">Date</th>
+                            <th class="sort" data-sort="transaction">Trade</th>
+                            <th class="text-start d-none d-lg-table-cell">Details</th>
+                            <th class="sort d-none d-lg-table-cell" data-sort="wallet">Wallet</th>
+                            <th class="sort d-none d-lg-table-cell" data-sort="from">From/To</th>
+                            <th class="sort" data-sort="amount">Amount</th>
+                          </tr>
+                        </thead>
+                        <tbody class="list text-center">
+                          <tr class="border-bottom border-200" data-bs-toggle="modal" data-bs-target="#info-modal">
+                            <td class="date align-middle text-start fw-medium">15 Feb, 2023</td>
+                            <td class="transaction align-middle text-nowrap">
+                              <span class="far fa-arrow-alt-circle-up fa-2x text-success me-1 mt-2"></span>
+                              <img src="./assets/img/coins/btc.png" style="max-height: 26px; margin-bottom: 13px;">
+                            </td> 
+                            <td class="align-middle text-start d-none d-lg-table-cell">
+                              <div class="d-flex align-items-center position-relative">
+                                <i class="fas fa-exchange-alt fs-1 mb-2"></i>
+                                <div class="flex-1 ms-3">
+                                  <h6 class="mb-0 fw-semi-bold text-900">Contract Call</h6>
+                                  <p class="mb-0 fw-medium">08:00 pm</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td class="wallet align-middle d-none d-lg-table-cell">
+                              <h5>
+                                <span role="button" class="badge badge-soft-secondary border-0 rounded-pill text-900" style="font-weight: 500px; font-size: 0.625em"
+                                data-bs-toggle="tooltip" title="1FfmbHfnpaZjKFvyi1okTjJJusN455paPH">
+                                <img src="./assets/img/coins/eth.png" style="max-height: 20px;" class="me-1">
+                                ZjKFvyi1...</span>
+                                <!-- <span class="far fa-copy fs--1" role="button"></span> -->
+                              </h5>
+                            </td>
+                            <td class="from align-middle fw-bold d-none d-lg-table-cell">
+                              <h5>
+                                <span role="button" class="badge badge-soft-secondary border-0 rounded-pill text-900" style="font-weight: 500px; font-size: 0.625em"
+                                data-bs-toggle="tooltip" title="1FfmbHfnpaZjKFvyi1okTjJJusN455paPH">
+                                <img src="./assets/img/coins/eth.png" style="max-height: 20px;" class="me-1">
+                                ZjKFvyi1...</span>
+                                <!-- <span class="far fa-copy fs--1" role="button"></span> -->
+                              </h5>
+                            </td>
+                            <td class="amount align-middle text-nowrap" style="width:1%;">
+                              <h6 class="fw-semi-bold text-900 mb-0">$290.00 USD</h6>
+                              <p class="fw-medium mb-0">15 May, 2020</p>
+                            </td>
+                          </tr>  
+                          <tr class="border-bottom border-200" data-bs-toggle="modal" data-bs-target="#info-modal">
+                            <td class="date align-middle text-start fw-medium">15 Feb, 2023</td>
+                            <td class="transaction align-middle text-nowrap">
+                              <span class="far fa-arrow-alt-circle-down fa-2x text-danger me-1 mt-2"></span>
+                              <img src="./assets/img/coins/eth.png" style="max-height: 26px; margin-bottom: 13px;">
+                            </td>                        
+                            <td class="align-middle text-start d-none d-lg-table-cell">
+                              <div class="d-flex align-items-center position-relative">
+                                <i class="fas fa-exchange-alt fs-1 mb-2"></i>
+                                <div class="flex-1 ms-3">
+                                  <h6 class="mb-0 fw-semi-bold text-900">Contract Call</h6>
+                                  <p class="mb-0 fw-medium">08:00 pm</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td class="wallet align-middle d-none d-lg-table-cell">
+                              <h5>
+                                <span role="button" class="badge badge-soft-secondary border-0 rounded-pill text-900" style="font-weight: 500px; font-size: 0.625em"
+                                data-bs-toggle="tooltip" title="1FfmbHfnpaZjKFvyi1okTjJJusN455paPH">
+                                <img src="./assets/img/coins/eth.png" style="max-height: 20px;" class="me-1">
+                                ZjKFvyi1...</span>
+                                <!-- <span class="far fa-copy fs--1" role="button"></span> -->
+                              </h5>
+                            </td>
+                            <td class="from align-middle fw-bold d-none d-lg-table-cell">
+                              <h5>
+                                <span role="button" class="badge badge-soft-secondary border-0 rounded-pill text-900" style="font-weight: 500px; font-size: 0.625em"
+                                data-bs-toggle="tooltip" title="1FfmbHfnpaZjKFvyi1okTjJJusN455paPH">
+                                <img src="./assets/img/coins/eth.png" style="max-height: 20px;" class="me-1">
+                                ZjKFvyi1...</span>
+                                <!-- <span class="far fa-copy fs--1" role="button"></span> -->
+                              </h5>
+                            </td>
+                            <td class="amount align-middle text-nowrap" style="width:1%;">
+                              <h6 class="fw-semi-bold text-900 mb-0">$290.00 USD</h6>
+                              <p class="fw-medium mb-0">15 May, 2020</p>
+                            </td>
+                          </tr>                            
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="d-flex justify-content-center mt-3"><button class="btn btn-sm btn-falcon-default me-1" type="button" title="Previous" data-list-pagination="prev"><span class="fas fa-chevron-left"></span></button>
+                      <ul class="pagination mb-0"></ul><button class="btn btn-sm btn-falcon-default ms-1" type="button" title="Next" data-list-pagination="next"><span class="fas fa-chevron-right"> </span></button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>            

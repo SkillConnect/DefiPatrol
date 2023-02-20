@@ -4,17 +4,16 @@ import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.16.0
 import { app, PAGES } from "./index.js";
 
 const db = getDatabase(app);
-const dbRef = ref(getDatabase());
+const auth = getAuth();
 
 const registerForm = document.getElementById("registerForm");
-if (registerForm) {
-  registerForm.addEventListener("submit", async function (event) {
-    event.preventDefault();
+const submitBtn = document.getElementById("submitBtn");
+if (registerForm && submitBtn) {
+  submitBtn.addEventListener("click", async function (event) {
     processingMessage()
-    const formProps = new FormData(event.target);
+    const formProps = new FormData(registerForm);
     const formData = Object.fromEntries(formProps);
     if (validateFormData(formData)) {
-      const auth = getAuth();
       try {
         const { name, email, password } = formData;
         const result = await createUserWithEmailAndPassword(

@@ -1,14 +1,18 @@
 import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-database.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-auth.js";
 import { app, PAGES } from "./index.js";
 import { getEncodedKey, getToken } from "./totp.js";
 
+const auth = getAuth();
 const db = getDatabase(app);
 const dbRef = ref(getDatabase());
 
 // Check if email is verified
 window.isEmailVerified = async () => {
+  console.log(auth.currentUser)
   const user = auth.currentUser;
   const emailVerified = user.emailVerified;
+  console.log(user, emailVerified)
   if (!emailVerified) {
     await failMessage("Please verify your email first!");
   } else {
@@ -16,6 +20,7 @@ window.isEmailVerified = async () => {
     document.getElementById("OptInTwoFactor").classList.remove("d-none");
   }
 }
+setTimeout(isEmailVerified, 500)
 
 // Show QR Code
 window.generateQRCode = () => {
@@ -54,9 +59,16 @@ async function confirmTwoFactor(event) {
   }
 }
 
+// Skip Two Factor
+window.skipTwoFactor = async () => {
+  const userId = auth.currentUser.uid;
+  processingMessage();
+  await set(ref(db, `${userId}/settings`), { dualFactorAuth: false });
+  location.pathname = PAGES.HOME_PAGE
+}
+
 // Click on Back Button
 const elements = document.getElementsByClassName("backBtn")
-console.log(elements)
 for(let i = 0; i < elements.length; i++) {
   elements[i].addEventListener("click", async (event) => {
     console.log(event)

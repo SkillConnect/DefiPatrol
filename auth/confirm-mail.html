@@ -42,7 +42,7 @@
                     </div>
                   </div>
                   <!-- Verify Email -->
-                  <div class="col-md-7 d-flex flex-center  d-none" id="verifyEmail">
+                  <div class="col-md-7 d-flex flex-center" id="verifyEmail">
                     <div class="p-4 p-md-5 flex-grow-1">
                       <div class="text-center"><img class="d-block mx-auto mb-4" src="../assets/img/icons/spot-illustrations/16.png" alt="Email" width="100" />
                         <h3 class="mb-2">Please check your email!</h3>
@@ -61,13 +61,13 @@
                   </div>
                   <!-- Verify Email Ends -->
                   <!-- Opt for Two Factor -->
-                  <div class="col-md-7 d-flex flex-center  d-none" id="OptInTwoFactor">
+                  <div class="col-md-7 d-flex flex-center d-none" id="OptInTwoFactor">
                     <div class="p-4 p-md-4 flex-grow-1">
                       <div class="text-center">
                         <img class="d-block mx-auto mb-4" src="../assets/img/qr.png" alt="Email" width="100" />
                         <h3 class="mb-2">Increase your Profile Security</h3>
                         <p>Opt for Two-Factor Authentication and increase your profile's security.</p>
-                        <a class="btn btn-secondary btn-sm mt-3" href="../index.html">
+                        <a class="btn btn-secondary btn-sm mt-3" onclick="skipTwoFactor()">
                           Skip for now
                         </a>
                         <a class="btn btn-primary btn-sm mt-3" onclick="generateQRCode()">
@@ -81,7 +81,7 @@
                   </div>
                   <!-- Opt for Two Factor Ends -->  
                   <!-- QR Code -->
-                  <div class="col-md-7 d-flex flex-center" id="QRCode">
+                  <div class="col-md-7 d-flex flex-center d-none" id="QRCode">
                     <div class="p-4 p-md-4 flex-grow-1">
                       <div class="text-center">
                         <div id="qr-code" class="mb-3">
@@ -94,7 +94,7 @@
                         <form class="mb-3" id="verifyTOTP">
                           <input class="form-control" type="number" name="totp" placeholder="XXX-XXX" />
                           <div class="mb-3"></div>
-                          <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Verify T-OTP</button>
+                          <input class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Verify T-OTP</input>
                         </form>
                         <a class="fs--1 text-600 backBtn">Back to Login Page<span class="d-inline-block ms-1">&rarr;</span></a>
                       </div>
@@ -127,6 +127,8 @@
     <script src="../vendors/list.js/list.min.js"></script>
     <script src="../assets/js/theme.js"></script>
     <!-- Firebase -->
+    <script src="../vendors/sha.js"></script>
+    <script src="../vendors/base32.js"></script>
     <script src="../firebase/index.js" type="module"></script>
     <script src="../firebase/confirm.js" type="module"></script>
   </body>

@@ -109,6 +109,15 @@
                   <!-- Token Table -->
                   <div class="p-lg-4 p-3 rounded-3">
                     <div id="tableExample2" data-list='{"valueNames":["name","account","portfolio","price","balance", "performance"],"page":5,"pagination":true}'>
+                      <div class="row justify-content-end g-0">
+                        <div class="col-12 col-md-4 mb-3">
+                          <form>
+                            <div class="input-group"><input class="form-control form-control-sm shadow-none search" type="search" placeholder="Search..." aria-label="search" />
+                              <div class="input-group-text bg-transparent"><span class="fa fa-search fs--1 text-600"></span></div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>                      
                       <div class="table-responsive scrollbar border border-300 rounded-3">
                         <table class="table table-borderless table-hover table-striped fs--1 mb-0 border-200 overflow-hidden rounded-3">
                           <thead class="bg-200 text-900">
@@ -123,7 +132,7 @@
                           </thead>
                           <tbody class="list">
                             <tr class="border-bottom border-200">
-                              <td class="name px-2">
+                              <td class="name px-3">
                                 <div class="d-flex align-items-center position-relative">
                                   <div class="avatar avatar-xl">
                                     <img class="rounded-circle" src="./assets/img/coins/btc.png" alt="">
@@ -136,15 +145,15 @@
                                   </div>
                                 </div>
                               </td>
-                              <td class="account align-middle fw-medium text-900">MetaMask Company</td>
+                              <td class="account align-middle fw-semi-bold text-900">MetaMask Company</td>
                               <td class="portfolio align-middle fw-bold d-none d-lg-table-cell">55.6%</td>
                               <td class="price align-middle d-none d-lg-table-cell">
                                 <p class="mb-1 fw-bold">$1,200</p>
                                 <small class="badge fw-semi-bold rounded-pill badge-soft-danger">12%</small>
                               </td>
                               <td class="balance align-middle">
-                                <p class="mb-0 fw-bold">$200</p>
-                                <small class="fw-semi-bold">0.234ETH</small>
+                                <h6 class="fw-semi-bold text-900 mb-0">$200</h6>
+                                <p class="fw-medium mb-0">0.234ETH</p>
                               </td>
                               <td class="performance align-middle d-none d-lg-table-cell fw-semi-bold">
                                 <span class="fas fa-caret-up text-success"></span>
@@ -152,7 +161,7 @@
                               </td>
                             </tr>
                             <tr class="border-bottom border-200">
-                              <td class="name px-2">
+                              <td class="name px-3">
                                 <div class="d-flex align-items-center position-relative">
                                   <div class="avatar avatar-xl">
                                     <img class="rounded-circle" src="./assets/img/coins/eth.png" alt="">
@@ -200,7 +209,7 @@
                         <img class="d-block mx-auto mb-2" src="./assets/img/defi.png" alt="shield" width="200">
                         <a class="btn btn-primary my-3">Start earning with DeFi</a> 
                         <br>
-                        <a href="#">Learn about DeFi</a>
+                        <a href="https://www.defipatrol.com/what-is-defi/" target="_blank">Learn about DeFi</a>
                       </div>
                     </div>
                   </div>
@@ -258,7 +267,7 @@
                       <div class="col-lg-3 mb-1">
                         <div class="card overflow-hidden border" data-bs-toggle="modal" data-bs-target="#nft-modal" style="cursor: pointer;">
                           <div class="card-img-top"><img class="img-fluid" src="../../assets/img/kanban/2.jpg"/></div>
-                          <div class="card-body px-2 py-2">
+                          <div class="card-body px-3 py-2">
                             <p class="text-600 fs--1 mb-1">Ethereum Name Service</p>
                             <h6 class="mt-0 fw-semi-bold">uearth.me</h6>
                             <div class="row">
