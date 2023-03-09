@@ -15,198 +15,187 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
   <link href="./vendors/simplebar/simplebar.min.css" rel="stylesheet">
+  <link href="./vendors/choices/choices.min.css" rel="stylesheet" />
   <link href="./assets/css/theme.min.css" rel="stylesheet">
   <link href="./assets/css/user.css" rel="stylesheet">
+  <style>
+    #overlay {
+      background:rgba(0,0,0,0.3);
+      display:none;
+      width:100%; height:100%;
+      position:absolute; top:0; left:0; z-index:1050;
+    }
+  </style>
 </head>
 
 <body>
-  <main class="main" id="top">
-    <div class="container" data-layout="container">
-      <script>
-        var isFluid = JSON.parse(localStorage.getItem('isFluid'));
-        if (isFluid) {
-          var container = document.querySelector('[data-layout]');
-          container.classList.remove('container');
-          container.classList.add('container-fluid');
-        }
-      </script>
-      <nav class="navbar navbar-light navbar-vertical navbar-transparent navbar-expand-xl">
-        <!-- Navbar -->
-        <div id="navbarPlaceholder"></div>
-        <!-- Navbar -->
-      </nav>
+    <div id="overlay"></div>
+    <main class="main" id="top">
+      <div class="container" data-layout="container">
+        <script>
+          var isFluid = JSON.parse(localStorage.getItem('isFluid'));
+          if (isFluid) {
+            var container = document.querySelector('[data-layout]');
+            container.classList.remove('container');
+            container.classList.add('container-fluid');
+          }
+        </script>
+        <nav class="navbar navbar-light navbar-vertical navbar-transparent navbar-expand-xl">
+          <!-- Navbar -->
+          <div id="navbarPlaceholder"></div>
+          <!-- Navbar -->
+        </nav>
 
-      <div class="content">
+        <div class="content">
           <!-- TopBar -->
           <div id="topbarPlaceholder"></div>
           <!-- TopBar -->
 
-          <div class="card overflow-hidden mb-3">
-            <div class="card-header bg-light">
-              <div class="row flex-between-center">
-                <div class="col-sm-auto">
-                  <h5 class="mb-1 mb-md-0">Your Notifications</h5>
-                </div>
-                <div class="col-sm-auto fs--1"><a class="font-sans-serif ms-2 ms-sm-3" href="#!">Mark all as read</a><a class="font-sans-serif ms-2 ms-sm-3" href="#notification-settings-modal" data-bs-toggle="modal">Notification settings</a></div>
-              </div>
-            </div>
-            <div class="card-body fs--1 p-0">
-              <a class="border-bottom-0 notification rounded-0 border-x-0 border-300" href="#!">
-                <div class="notification-avatar">
-                  <div class="avatar avatar-xl me-3">
-                    <img class="rounded-circle" src="./assets/img/team/1.jpg" alt="" />
-
-                  </div>
-                </div>
-                <div class="notification-body">
-                  <p class="mb-1">Announcing the winners of the <strong>The only book awards</strong> decided by you, the readers. Check out the champions and runners-up in all 21 categories now!</p>
-                  <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">📢</span>Just Now</span>
-
-                </div>
-              </a>
-
-              <a class="border-bottom-0 notification-unread notification rounded-0 border-x-0 border-300" href="#!">
-                <div class="notification-avatar">
-                  <div class="avatar avatar-xl me-3">
-                    <img class="rounded-circle" src="./assets/img/team/2.jpg" alt="" />
-
-                  </div>
-                </div>
-                <div class="notification-body">
-                  <p class="mb-1">Last chance to vote in <strong>The 2018 Falcon Choice Awards</strong>! See what made it to the Final Round and help your favorites take home the win. Voting closes on November 26</p>
-                  <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">🏆</span>15m</span>
-
-                </div>
-              </a>
-
-              <a class="border-bottom-0 notification rounded-0 border-x-0 border-300" href="#!">
-                <div class="notification-avatar">
-                  <div class="avatar avatar-xl me-3">
-                    <img class="rounded-circle" src="./assets/img/team/3.jpg" alt="" />
-
-                  </div>
-                </div>
-                <div class="notification-body">
-                  <p class="mb-1"><strong>Jennifer Kent</strong> declared you as a <strong>President</strong> of Computer Science and Engineering Society</p>
-                  <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">📢</span>1h</span>
-
-                </div>
-              </a>
-
-              <a class="border-bottom-0 notification-unread notification rounded-0 border-x-0 border-300" href="#!">
-                <div class="notification-avatar">
-                  <div class="avatar avatar-xl me-3">
-                    <img class="rounded-circle" src="./assets/img/team/4.jpg" alt="" />
-
-                  </div>
-                </div>
-                <div class="notification-body">
-                  <p class="mb-1">Congratulate <strong>Woody Allen</strong> for starting a new position as Business Development Manager &amp; Implementation Engineer at <strong>Hewlett Packard Enterprise(HP)</strong></p>
-                  <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">🎁</span>6h</span>
-
-                </div>
-              </a>
-
-              <a class="border-bottom-0 notification-unread notification rounded-0 border-x-0 border-300" href="#!">
-                <div class="notification-avatar">
-                  <div class="avatar avatar-xl me-3">
-                    <img class="rounded-circle" src="./assets/img/team/5.jpg" alt="" />
-
-                  </div>
-                </div>
-                <div class="notification-body">
-                  <p class="mb-1"><strong>Christopher Nolan</strong> Mentioned you in a comment : "Congratulations! Wishing you a great future. Proud fo you ❤️"</p>
-                  <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">💬</span>8h</span>
-
-                </div>
-              </a>
-
-              <a class="border-bottom-0 notification rounded-0 border-x-0 border-300" href="#!">
-                <div class="notification-avatar">
-                  <div class="avatar avatar-xl me-3">
-                    <img class="rounded-circle" src="./assets/img/logos/harvard.png" alt="" />
-
-                  </div>
-                </div>
-                <div class="notification-body">
-                  <p class="mb-1">Join <strong>GIS Institute Winter 2019</strong> Event arranged by <strong>Harvard University</strong>. Only three days to go.</p>
-                  <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">🚶</span>9h</span>
-
-                </div>
-              </a>
-
-              <a class="border-bottom-0 notification-unread notification rounded-0 border-x-0 border-300" href="#!">
-                <div class="notification-avatar">
-                  <div class="avatar avatar-xl me-3">
-                    <img class="rounded-circle" src="./assets/img/team/7.jpg" alt="" />
-
-                  </div>
-                </div>
-                <div class="notification-body">
-                  <p class="mb-1"><strong>Peter Jackson</strong> set CSE Curnival Programe in New Museums Site in <strong>University of Cambridge</strong></p>
-                  <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">💻</span>14h</span>
-
-                </div>
-              </a>
-
-              <a class="border-bottom-0 notification rounded-0 border-x-0 border-300" href="#!">
-                <div class="notification-avatar">
-                  <div class="avatar avatar-xl me-3">
-                    <img class="rounded-circle" src="./assets/img/team/8.jpg" alt="" />
-
-                  </div>
-                </div>
-                <div class="notification-body">
-                  <p class="mb-1"><strong>David Fincher</strong> declared you as a verified member of <strong>Stanford University.</strong></p>
-                  <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">✔️</span>2d</span>
-
-                </div>
-              </a>
-
-              <a class="border-bottom-0 notification rounded-0 border-x-0 border-300" href="#!">
-                <div class="notification-avatar">
-                  <div class="avatar avatar-xl me-3">
-                    <img class="rounded-circle" src="./assets/img/team/9.jpg" alt="" />
-
-                  </div>
-                </div>
-                <div class="notification-body">
-                  <p class="mb-1">Follow <strong>International Conference on Water and Environmental Engineering (ICWEE)</strong> event arranged by United Nations Development Program on 30 December 2018</p>
-                  <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">🔍</span>3d</span>
-
-                </div>
-              </a>
-
-              <a class="border-bottom-0 notification rounded-0 border-x-0 border-300" href="#!">
-                <div class="notification-avatar">
-                  <div class="avatar avatar-xl me-3">
-                    <img class="rounded-circle" src="./assets/img/team/10.jpg" alt="" />
-
-                  </div>
-                </div>
-                <div class="notification-body">
-                  <p class="mb-1"><strong>James Cameron</strong> invited to join the group: United Nations International Children's Fund</p>
-                  <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">🙋‍</span>2d</span>
-
-                </div>
-              </a>
-
-              <a class="border-bottom-0 notification-unread  notification rounded-0 border-x-0 border-300" href="#!">
-                <div class="notification-avatar">
-                  <div class="avatar avatar-xl me-3">
-                    <img class="rounded-circle" src="./assets/img/logos/oxford.png" alt="" />
-
-                  </div>
-                </div>
-                <div class="notification-body">
-                  <p class="mb-1"><strong>University of Oxford</strong> created an event : "Causal Inference Hilary 2019"</p>
-                  <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">✌️</span>1w</span>
-
-                </div>
-              </a>
-
+          <div class="d-flex mb-4 mt-3">
+            <span class="fa-stack me-2 ms-n1"><i class="fa-inverse fa-stack-1x text-primary fas fa-bell"></i></span>
+            <div class="col">
+              <h5 class="mb-0 text-primary position-relative"><span class="bg-200 dark__bg-1100 pe-3">Alerts</span>
+                <span class="border position-absolute top-50 translate-middle-y w-100 start-0 z-index--1"></span></h5>
+              <p class="mb-0">Stay informed and ahead with Crypto Alerts.</p>
             </div>
           </div>
+  
+          <div class="card">
+            <div class="card-header pt-3 pb-2 px-3 px-lg-3 mx-0 border-bottom">
+              <div class="row justify-content-between">
+                <div class="col-lg-4 mt-1 ms-2">
+                </div>
+                <div class="col-lg-6 d-flex align-items-center mb-2 me-2">
+                  <div class="search-box" id="search-box" style="width: 100%;" data-list='{"valueNames":["title"]}'>
+                    <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
+                      <input class="form-control search-input fuzzy-search" id="search" type="search" placeholder="Add Price Alert..." aria-label="Search" />
+                      <span class="fas fa-search search-box-icon"></span>
+                    </form>
+                    <div class="btn-close-falcon-container position-absolute end-0 top-50 translate-middle shadow-none" data-bs-dismiss="search">
+                      <button class="btn btn-link btn-close-falcon p-0" aria-label="Close"></button>
+                    </div>
+                    <div class="dropdown-menu border font-base start-0 mt-2 py-0 overflow-hidden w-100" id="dropdownMenu">
+                      <div class="scrollbar list py-3" style="max-height: 24rem;">     
+                        <hr class="text-200 dark__text-900" />
+                        <h6 class="dropdown-header fw-medium text-uppercase px-x1 fs--2 pt-0 pb-2">Members</h6>
+                        <a class="dropdown-item px-x1 py-2" data-bs-toggle="modal" data-bs-target="#create-alert-modal">
+                          <div class="d-flex align-items-center">
+                            <div class="avatar avatar-l status-online me-2">
+                              <img class="rounded-circle" src="assets/img/team/1.jpg" alt="" />
+      
+                            </div>
+                            <div class="flex-1">
+                              <h6 class="mb-0 title">Anna Karinina</h6>
+                              <p class="fs--2 mb-0 d-flex">Technext Limited</p>
+                            </div>
+                          </div>
+                        </a>
+                        <a class="dropdown-item px-x1 py-2" data-bs-toggle="modal" data-bs-target="#create-alert-modal">
+                          <div class="d-flex align-items-center">
+                            <div class="avatar avatar-l me-2">
+                              <img class="rounded-circle" src="assets/img/team/2.jpg" alt="" />
+      
+                            </div>
+                            <div class="flex-1">
+                              <h6 class="mb-0 title">Antony Hopkins</h6>
+                              <p class="fs--2 mb-0 d-flex">Brain Trust</p>
+                            </div>
+                          </div>
+                        </a>
+                        <a class="dropdown-item px-x1 py-2" data-bs-toggle="modal" data-bs-target="#create-alert-modal">
+                          <div class="d-flex align-items-center">
+                            <div class="avatar avatar-l me-2">
+                              <img class="rounded-circle" src="assets/img/team/3.jpg" alt="" />
+      
+                            </div>
+                            <div class="flex-1">
+                              <h6 class="mb-0 title">Emma Watson</h6>
+                              <p class="fs--2 mb-0 d-flex">Google</p>
+                            </div>
+                          </div>
+                        </a>
+      
+                      </div>
+                      <div class="text-center mt-n3">
+                        <p class="fallback fw-bold fs-1 d-none">No Result Found.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+  
+            <div class="card-body px-2 px-lg-3 mx-1" style="min-height: 500px;">
+              <!-- Table -->
+              <div class="mx-1 mx-lg-2">
+                <div id="tableExample3" data-list='{"valueNames":["token","price","1d","1m","1y","marketcap"],"page":10,"pagination":true}'>
+                  <div class="row justify-content-end g-0">
+                    <div class="col-12 col-md-4 mb-3">
+                      <form>
+                        <div class="input-group"><input class="form-control form-control-sm shadow-none search" type="search" placeholder="Search watchlist..." aria-label="search" />
+                          <div class="input-group-text bg-transparent"><span class="fa fa-search fs--1 text-600"></span></div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="table-responsive scrollbar border border-300 rounded-3">
+                    <table class="table table-hover table-striped fs--1 mb-0">
+                      <thead class="bg-200 text-900 text-center">
+                        <tr>
+                          <th class="text-start"><i class="far fa-star"></i></th>
+                          <th class="sort text-start" data-sort="token">Token</th>
+                          <th class="sort" data-sort="price">Price</th>
+                          <th class="sort text-start d-none d-lg-table-cell" data-sort="1d">1 Day</th>
+                          <th class="sort d-none d-lg-table-cell" data-sort="1m">30 Days</th>
+                          <th class="sort d-none d-lg-table-cell" data-sort="1y">1 Year</th>
+                          <th class="sort" data-sort="marketcap">Mrkt Cap</th>
+                        </tr>
+                      </thead>
+                      <tbody class="list text-center">
+                        <tr class="border-bottom border-200">
+                          <td class="text-start align-middle"><i class="fas fa-star text-warning"></i></td>
+                          <td class="token align-middle text-start">
+                            <div class="d-flex align-items-center position-relative">
+                              <div class="avatar avatar-xl">
+                                <img class="rounded-circle" src="./assets/img/coins/btc.png" alt="">
+                              </div>
+                              <div class="flex-1 ms-2">
+                                <a href="coins.html">
+                                  <h6 class="mb-0 fw-semi-bold text-900">BTC</h6>
+                                  <p class="mb-0 fw-medium text-900">Bitcoin</p>
+                                </a>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="price align-middle fw-bold text-900">$123,123</td>
+                          <td class="1d align-middle fw-bold d-none d-lg-table-cell text-success">+2.4%</td>
+                          <td class="1m align-middle fw-bold d-none d-lg-table-cell text-success">+12.34%</td>
+                          <td class="1y align-middle fw-bold d-none d-lg-table-cell text-danger">-87.87%</td>
+                          <td class="marketcap align-middle fw-bold text-900">1.92B</td>
+                        </tr>                          
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="d-flex justify-content-center mt-3"><button class="btn btn-sm btn-falcon-default me-1" type="button" title="Previous" data-list-pagination="prev"><span class="fas fa-chevron-left"></span></button>
+                    <ul class="pagination mb-0"></ul><button class="btn btn-sm btn-falcon-default ms-1" type="button" title="Next" data-list-pagination="next"><span class="fas fa-chevron-right"> </span></button>
+                  </div>
+                </div>
+              </div>
+              <!-- Table Ends -->
+  
+              <!-- Empty -->
+              <div class="text-center pt-5 d-none">
+                <i class="fas fa-chart-line fa-2x fw-normal mt-4 mb-3 text-warning" ></i>
+                <h4 class="mb-2">Create Price Alert</h4>
+                <button class="btn btn-primary my-3" onclick="openSearch()">
+                  Create Alert
+                </button>             
+              </div>
+              <!-- Empty -->
+            </div>
+  
+          </div>   
 
           <footer class="footer">
             <div class="row g-0 justify-content-between fs--1 mt-4 mb-3">
@@ -222,6 +211,113 @@
     <!--    End of Main Content-->
     <!-- ===============================================-->
   
+
+    <!-- Create Alert Modal -->
+    <div class="modal fade" id="create-alert-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+        <div class="modal-content position-relative">
+          <div class="modal-body p-0">
+            <div class="rounded-top-lg py-3 ps-4 pe-6 bg-light text-center">
+              <h5 class="mb-1">Create Alert</h5>
+            </div>
+            <div class="p-4 pb-0">
+              <form>
+                <div class="mb-3">
+                  <label class="form-label">Coin</label>
+                  <input type="text" class="form-control" value="Bitcoin (BTC)" readonly>
+                  <a href="javascript:void(0);" onclick="openSearch()"><small>Change</small></a>
+                </div>
+                <div class="mb-3">
+                  <div class="card mb-3 shadow-none border">
+                    <div class="card-header">
+                      <div class="nav nav-pills nav-pills-falcon flex-grow-1 row g-0" role="tablist">
+                        <div class="col-6 d-grid">
+                          <button class="btn btn-sm active" data-bs-toggle="pill" data-bs-target="#dom-74e159f9-7607-4892-ac46-9129caa2ae72" type="button" role="tab" aria-controls="dom-74e159f9-7607-4892-ac46-9129caa2ae72" aria-selected="true" id="tab-dom-74e159f9-7607-4892-ac46-9129caa2ae72">Set by Price</button>
+                        </div>
+                        <div class="col-6 d-grid">
+                          <button class="btn btn-sm" data-bs-toggle="pill" data-bs-target="#dom-56d75d0e-c92b-427d-88f4-69c91a6fb104" type="button" role="tab" aria-controls="dom-56d75d0e-c92b-427d-88f4-69c91a6fb104" aria-selected="false" id="tab-dom-56d75d0e-c92b-427d-88f4-69c91a6fb104">Set by %</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="tab-content">
+                        <div class="tab-pane preview-tab-pane active" role="tabpanel" aria-labelledby="tab-dom-74e159f9-7607-4892-ac46-9129caa2ae72" id="dom-74e159f9-7607-4892-ac46-9129caa2ae72">
+                          <div class="mb-3 row g-1">
+                            <div class="col-6">
+                              <label for="target" class="form-label">Currency</label>
+                            </div>
+                            <div class="col-3 d-grid">
+                              <input type="radio" class="btn-check" name="currency" id="success-outlined" autocomplete="off" checked>
+                              <label class="btn btn-sm btn-outline-primary" for="success-outlined">USD</label>
+                            </div>
+                            <div class="col-3 d-grid">
+                              <input type="radio" class="btn-check" name="currency" id="danger-outlined" autocomplete="off">
+                              <label class="btn btn-sm btn-outline-primary" for="danger-outlined">BTC</label>
+                            </div>
+                          </div>
+                          <div class="mb-3 row">
+                            <div class="col-lg-6">
+                              <label for="target" class="form-label">Enter Target</label>
+                              <input type="text" class="form-control" id="target" placeholder="Enter target">
+                            </div>
+                            <div class="col-lg-6">
+                              <label for="target" class="form-label">Current Price</label>
+                              <input type="text" class="form-control" id="target" value="$18,52,00" readonly>
+                            </div>                            
+                          </div>
+                        </div>
+                        <div class="tab-pane code-tab-pane" role="tabpanel" aria-labelledby="tab-dom-56d75d0e-c92b-427d-88f4-69c91a6fb104" id="dom-56d75d0e-c92b-427d-88f4-69c91a6fb104">
+                          <div class="mb-3 row g-1">
+                            <div class="col-6">
+                              <label for="condition" class="form-label">Condition</label>
+                            </div>
+                            <div class="col-3 d-grid">
+                              <input type="radio" class="btn-check" name="condition" id="more" autocomplete="off" checked>
+                              <label class="btn btn-sm btn-outline-primary" for="more">More ></label>
+                            </div>
+                            <div class="col-3 d-grid">
+                              <input type="radio" class="btn-check" name="condition" id="less" autocomplete="off">
+                              <label class="btn btn-sm btn-outline-primary" for="less">Less <</label>
+                            </div>
+                          </div>
+                          <div class="mb-3 row">
+                            <div class="col-lg-6">
+                              <label for="target" class="form-label">Enter Target %</label>
+                              <input type="text" class="form-control" id="target" value="10">
+                            </div>
+                            <div class="col-lg-6">
+                              <label for="validationCustom04" class="form-label">Get recurring alert</label>
+                              <select class="form-select" id="validationCustom04" required>
+                                <option selected>One Time</option>
+                                <option>Keep recurring</option>
+                              </select>
+                            </div>                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Notes</label>
+                  <input type="text" class="form-control">
+                </div>    
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                  <label class="form-check-label" for="flexSwitchCheckChecked">Enable Alerts</label>
+                </div>          
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#verify-mobile-modal">Save </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Create Alert Modal ends --> 
+
     <!--    JavaScripts-->
     <script src="./vendors/popper/popper.min.js"></script>
     <script src="./vendors/bootstrap/bootstrap.min.js"></script>
@@ -233,9 +329,32 @@
     <script src="./vendors/dayjs/dayjs.min.js"></script>
     <script src="./vendors/fontawesome/all.min.js"></script>
     <script src="./vendors/lodash/lodash.min.js"></script>
+    <script src="./vendors/choices/choices.min.js"></script>
+
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="./vendors/list.js/list.min.js"></script>
     <script src="./assets/js/theme.js"></script>
+    <script>
+      const myModal = new bootstrap.Modal(document.getElementById('create-alert-modal'))
+      function openSearch() {
+        setTimeout(() => {
+          document.getElementById("search").focus()
+        }, 0);
+        myModal.hide()
+      }
+      document.getElementById("search").addEventListener('focus', () => {
+        document.getElementById("overlay").style = "display: block"
+        document.getElementById("search-box").style.zIndex = "1055"
+      })
+      document.getElementById("search").addEventListener('focusout', () => {
+        document.getElementById("overlay").style = "display: none"
+        document.getElementById("search-box").style.zIndex = "1000"
+      })
+      document.getElementById("overlay").addEventListener('click', (e) => {
+        e.target.style = "display: none"
+        document.getElementById("search-box").style.zIndex = "1000"
+      })
+    </script>
   </body>
   
   </html>

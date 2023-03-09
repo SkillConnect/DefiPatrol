@@ -43,284 +43,208 @@
         <div id="topbarPlaceholder"></div>
         <!-- TopBar -->
 
-        <div class="row g-3 mb-3">
-          <div class="col-12 order-xxl-3">
-            <div class="card" id="runningProjectTable" data-list='{"valueNames":["projects","worked","time","date"]}'>
-              <div class="card-header">
-                <h6 class="mb-0">Running Projects</h6>
+        <div class="d-flex mb-4 mt-3">
+          <span class="fa-stack me-2 ms-n1"><i class="fa-inverse fa-stack-1x text-primary fas fa-star"></i></span>
+          <div class="col">
+            <h5 class="mb-0 text-primary position-relative"><span class="bg-200 dark__bg-1100 pe-3">WatchList</span>
+              <span class="border position-absolute top-50 translate-middle-y w-100 start-0 z-index--1"></span></h5>
+            <p class="mb-0">Stay on top of your crypto game.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header pt-3 pb-2 px-3 px-lg-3 mx-0 border-bottom">
+            <div class="row justify-content-between">
+              <div class="col-lg-4 mt-1 ms-2">
+                <div class="form-check form-switch">
+                  <label class="form-check-label" for="flexSwitchCheckChecked">Hide my holdings</label>
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                  <span class="fas fa-info-circle ms-1 text-500" data-bs-toggle="modal" data-bs-target="#info-modal" style="cursor: pointer;"></span>
+                </div>
               </div>
-              <div class="card-body p-0">
-                <div class="scrollbar">
-                  <table class="table mb-0 table-borderless fs--2 border-200 overflow-hidden table-running-project">
-                    <thead class="bg-light">
-                      <tr class="text-800">
-                        <th class="sort" data-sort="projects">Projects</th>
-                        <th class="sort" data-sort="time">Progress</th>
-                        <th class="sort text-center" data-sort="worked"> Worked</th>
-                        <th class="sort text-center" data-sort="date">Due Date</th>
-                        <th class="text-end">Members</th>
+              <div class="col-lg-6 d-flex align-items-center mb-2 me-2">
+                <div class="search-box" style="width: 100%;" data-list='{"valueNames":["title"]}'>
+                  <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
+                    <input class="form-control search-input fuzzy-search" type="search" placeholder="Search for a token..." aria-label="Search" />
+                    <span class="fas fa-search search-box-icon"></span>
+    
+                  </form>
+                  <div class="btn-close-falcon-container position-absolute end-0 top-50 translate-middle shadow-none" data-bs-dismiss="search">
+                    <button class="btn btn-link btn-close-falcon p-0" aria-label="Close"></button>
+                  </div>
+                  <div class="dropdown-menu border font-base start-0 mt-2 py-0 overflow-hidden w-100">
+                    <div class="scrollbar list py-3" style="max-height: 24rem;">
+                      <h6 class="dropdown-header fw-medium text-uppercase px-x1 fs--2 pt-0 pb-2">Recently Browsed</h6><a class="dropdown-item fs--1 px-x1 py-1 hover-primary" href="app/events/event-detail.html">
+                        <div class="d-flex align-items-center">
+                          <span class="fas fa-circle me-2 text-300 fs--2"></span>
+    
+                          <div class="fw-normal title">Pages <span class="fas fa-chevron-right mx-1 text-500 fs--2" data-fa-transform="shrink-2"></span> Events</div>
+                        </div>
+                      </a>
+                      <a class="dropdown-item fs--1 px-x1 py-1 hover-primary" href="app/e-commerce/customers.html">
+                        <div class="d-flex align-items-center">
+                          <span class="fas fa-circle me-2 text-300 fs--2"></span>
+    
+                          <div class="fw-normal title">E-commerce <span class="fas fa-chevron-right mx-1 text-500 fs--2" data-fa-transform="shrink-2"></span> Customers</div>
+                        </div>
+                      </a>
+    
+                      <hr class="text-200 dark__text-900" />
+                      <h6 class="dropdown-header fw-medium text-uppercase px-x1 fs--2 pt-0 pb-2">Suggested Filter</h6><a class="dropdown-item px-x1 py-1 fs-0" href="app/e-commerce/customers.html">
+                        <div class="d-flex align-items-center"><span class="badge fw-medium text-decoration-none me-2 badge-soft-warning">customers:</span>
+                          <div class="flex-1 fs--1 title">All customers list</div>
+                        </div>
+                      </a>
+                      <a class="dropdown-item px-x1 py-1 fs-0" href="app/events/event-detail.html">
+                        <div class="d-flex align-items-center"><span class="badge fw-medium text-decoration-none me-2 badge-soft-success">events:</span>
+                          <div class="flex-1 fs--1 title">Latest events in current month</div>
+                        </div>
+                      </a>
+                      <a class="dropdown-item px-x1 py-1 fs-0" href="app/e-commerce/product/product-grid.html">
+                        <div class="d-flex align-items-center"><span class="badge fw-medium text-decoration-none me-2 badge-soft-info">products:</span>
+                          <div class="flex-1 fs--1 title">Most popular products</div>
+                        </div>
+                      </a>
+    
+                      <hr class="text-200 dark__text-900" />
+                      <h6 class="dropdown-header fw-medium text-uppercase px-x1 fs--2 pt-0 pb-2">Files</h6><a class="dropdown-item px-x1 py-2" href="#!">
+                        <div class="d-flex align-items-center">
+                          <div class="file-thumbnail me-2"><img class="border h-100 w-100 fit-cover rounded-3" src="assets/img/products/3-thumb.png" alt="" /></div>
+                          <div class="flex-1">
+                            <h6 class="mb-0 title">iPhone</h6>
+                            <p class="fs--2 mb-0 d-flex"><span class="fw-semi-bold">Antony</span><span class="fw-medium text-600 ms-2">27 Sep at 10:30 AM</span></p>
+                          </div>
+                        </div>
+                      </a>
+                      <a class="dropdown-item px-x1 py-2" href="#!">
+                        <div class="d-flex align-items-center">
+                          <div class="file-thumbnail me-2"><img class="img-fluid" src="assets/img/icons/zip.png" alt="" /></div>
+                          <div class="flex-1">
+                            <h6 class="mb-0 title">Falcon v1.8.2</h6>
+                            <p class="fs--2 mb-0 d-flex"><span class="fw-semi-bold">John</span><span class="fw-medium text-600 ms-2">30 Sep at 12:30 PM</span></p>
+                          </div>
+                        </div>
+                      </a>
+    
+                      <hr class="text-200 dark__text-900" />
+                      <h6 class="dropdown-header fw-medium text-uppercase px-x1 fs--2 pt-0 pb-2">Members</h6><a class="dropdown-item px-x1 py-2" href="pages/user/profile.html">
+                        <div class="d-flex align-items-center">
+                          <div class="avatar avatar-l status-online me-2">
+                            <img class="rounded-circle" src="assets/img/team/1.jpg" alt="" />
+    
+                          </div>
+                          <div class="flex-1">
+                            <h6 class="mb-0 title">Anna Karinina</h6>
+                            <p class="fs--2 mb-0 d-flex">Technext Limited</p>
+                          </div>
+                        </div>
+                      </a>
+                      <a class="dropdown-item px-x1 py-2" href="pages/user/profile.html">
+                        <div class="d-flex align-items-center">
+                          <div class="avatar avatar-l me-2">
+                            <img class="rounded-circle" src="assets/img/team/2.jpg" alt="" />
+    
+                          </div>
+                          <div class="flex-1">
+                            <h6 class="mb-0 title">Antony Hopkins</h6>
+                            <p class="fs--2 mb-0 d-flex">Brain Trust</p>
+                          </div>
+                        </div>
+                      </a>
+                      <a class="dropdown-item px-x1 py-2" href="pages/user/profile.html">
+                        <div class="d-flex align-items-center">
+                          <div class="avatar avatar-l me-2">
+                            <img class="rounded-circle" src="assets/img/team/3.jpg" alt="" />
+    
+                          </div>
+                          <div class="flex-1">
+                            <h6 class="mb-0 title">Emma Watson</h6>
+                            <p class="fs--2 mb-0 d-flex">Google</p>
+                          </div>
+                        </div>
+                      </a>
+    
+                    </div>
+                    <div class="text-center mt-n3">
+                      <p class="fallback fw-bold fs-1 d-none">No Result Found.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+          <div class="card-body px-2 px-lg-3 mx-1" style="min-height: 500px;">
+            <!-- Table -->
+            <div class="mx-1 mx-lg-2 ">
+              <div id="tableExample3" data-list='{"valueNames":["token","price","1d","1m","1y","marketcap"],"page":10,"pagination":true}'>
+                <div class="row justify-content-end g-0">
+                  <div class="col-12 col-md-4 mb-3">
+                    <form>
+                      <div class="input-group"><input class="form-control form-control-sm shadow-none search" type="search" placeholder="Search watchlist..." aria-label="search" />
+                        <div class="input-group-text bg-transparent"><span class="fa fa-search fs--1 text-600"></span></div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="table-responsive scrollbar border border-300 rounded-3">
+                  <table class="table table-hover table-striped fs--1 mb-0">
+                    <thead class="bg-200 text-900 text-center">
+                      <tr>
+                        <th class="text-start"><i class="far fa-star"></i></th>
+                        <th class="sort text-start" data-sort="token">Token</th>
+                        <th class="sort" data-sort="price">Price</th>
+                        <th class="sort text-start d-none d-lg-table-cell" data-sort="1d">1 Day</th>
+                        <th class="sort d-none d-lg-table-cell" data-sort="1m">30 Days</th>
+                        <th class="sort d-none d-lg-table-cell" data-sort="1y">1 Year</th>
+                        <th class="sort" data-sort="marketcap">Mrkt Cap</th>
                       </tr>
                     </thead>
-                    <tbody class="list">
-                      <tr>
-                        <td>
+                    <tbody class="list text-center">
+                      <tr class="border-bottom border-200">
+                        <td class="text-start align-middle"><i class="fas fa-star text-warning"></i></td>
+                        <td class="token align-middle text-start">
                           <div class="d-flex align-items-center position-relative">
                             <div class="avatar avatar-xl">
-                              <div class="avatar-name rounded-circle text-primary bg-soft-primary fs-0"><span>C</span>
-                              </div>
+                              <img class="rounded-circle" src="./assets/img/coins/btc.png" alt="">
                             </div>
-                            <div class="flex-1 ms-3">
-                              <h6 class="mb-0 fw-semi-bold"><a class="stretched-link text-900"
-                                  href="../pages/user/profile.html">CRM dashboard design</a></h6>
-                              <p class="text-500 fs--2 mb-0">Falcon</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td class="align-middle">
-                          <div class="progress rounded-3 worked" style="height: 6px;">
-                            <div class="progress-bar bg-progress-gradient rounded-pill" role="progressbar"
-                              style="width: 50%" aria-valuenow="43.72" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td class="align-middle text-center time">
-                          <p class="fs--1 mb-0 fw-semi-bold">12h:50m:00s</p>
-                        </td>
-                        <td class="align-middle text-center date">
-                          <p class="fs--1 mb-0 fw-semi-bold">01/02/22</p>
-                        </td>
-                        <td>
-                          <div class="avatar-group justify-content-end">
-                            <div class="avatar avatar-xl border border-3 border-light rounded-circle">
-                              <img class="rounded-circle" src="./assets/img/team/1-thumb.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-xl border border-3 border-light rounded-circle">
-                              <img class="rounded-circle" src="./assets/img/team/2-thumb.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-xl border border-3 border-light rounded-circle">
-                              <div class="avatar-name rounded-circle "><span>+2</span></div>
+                            <div class="flex-1 ms-2">
+                              <a href="coins.html">
+                                <h6 class="mb-0 fw-semi-bold text-900">BTC</h6>
+                                <p class="mb-0 fw-medium text-900">Bitcoin</p>
+                              </a>
                             </div>
                           </div>
                         </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-flex align-items-center position-relative">
-                            <div class="avatar avatar-xl">
-                              <div class="avatar-name rounded-circle text-success bg-soft-success fs-0"><span>U</span>
-                              </div>
-                            </div>
-                            <div class="flex-1 ms-3">
-                              <h6 class="mb-0 fw-semi-bold"><a class="stretched-link text-900"
-                                  href="../pages/user/profile.html">UI/UX Redesign</a></h6>
-                              <p class="text-500 fs--2 mb-0">Themewagon</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td class="align-middle">
-                          <div class="progress rounded-3 worked" style="height: 6px;">
-                            <div class="progress-bar bg-progress-gradient rounded-pill" role="progressbar"
-                              style="width: 70%" aria-valuenow="43.72" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td class="align-middle text-center time">
-                          <p class="fs--1 mb-0 fw-semi-bold">11h:50m:00s</p>
-                        </td>
-                        <td class="align-middle text-center date">
-                          <p class="fs--1 mb-0 fw-semi-bold">04/02/22</p>
-                        </td>
-                        <td>
-                          <div class="avatar-group justify-content-end">
-                            <div class="avatar avatar-xl border border-3 border-light rounded-circle">
-                              <img class="rounded-circle" src="./assets/img/team/3-thumb.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-xl border border-3 border-light rounded-circle">
-                              <img class="rounded-circle" src="./assets/img/team/4-thumb.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-xl border border-3 border-light rounded-circle">
-                              <div class="avatar-name rounded-circle "><span>+5</span></div>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-flex align-items-center position-relative">
-                            <div class="avatar avatar-xl">
-                              <div class="avatar-name rounded-circle text-info bg-soft-info fs-0"><span>F</span></div>
-                            </div>
-                            <div class="flex-1 ms-3">
-                              <h6 class="mb-0 fw-semi-bold"><a class="stretched-link text-900"
-                                  href="../pages/user/profile.html">F.A.Q Section</a></h6>
-                              <p class="text-500 fs--2 mb-0">Mailbluster</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td class="align-middle">
-                          <div class="progress rounded-3 worked" style="height: 6px;">
-                            <div class="progress-bar bg-progress-gradient rounded-pill" role="progressbar"
-                              style="width: 60%" aria-valuenow="43.72" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td class="align-middle text-center time">
-                          <p class="fs--1 mb-0 fw-semi-bold">3h:30m:50s</p>
-                        </td>
-                        <td class="align-middle text-center date">
-                          <p class="fs--1 mb-0 fw-semi-bold">01/02/22</p>
-                        </td>
-                        <td>
-                          <div class="avatar-group justify-content-end">
-                            <div class="avatar avatar-xl border border-3 border-light rounded-circle">
-                              <img class="rounded-circle" src="./assets/img/team/5-thumb.png" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-xl border border-3 border-light rounded-circle">
-                              <img class="rounded-circle" src="./assets/img/team/7.jpg" alt="" />
-
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-flex align-items-center position-relative">
-                            <div class="avatar avatar-xl">
-                              <div class="avatar-name rounded-circle text-warning bg-soft-warning fs-0"><span>D</span>
-                              </div>
-                            </div>
-                            <div class="flex-1 ms-3">
-                              <h6 class="mb-0 fw-semi-bold"><a class="stretched-link text-900"
-                                  href="../pages/user/profile.html">Drip Campaign Feature</a></h6>
-                              <p class="text-500 fs--2 mb-0">Themewagon</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td class="align-middle">
-                          <div class="progress rounded-3 worked" style="height: 6px;">
-                            <div class="progress-bar bg-progress-gradient rounded-pill" role="progressbar"
-                              style="width: 80%" aria-valuenow="43.72" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td class="align-middle text-center time">
-                          <p class="fs--1 mb-0 fw-semi-bold">12h:20m:00s</p>
-                        </td>
-                        <td class="align-middle text-center date">
-                          <p class="fs--1 mb-0 fw-semi-bold">22/03/22</p>
-                        </td>
-                        <td>
-                          <div class="avatar-group justify-content-end">
-                            <div class="avatar avatar-xl border border-3 border-light rounded-circle">
-                              <img class="rounded-circle" src="./assets/img/team/7.jpg" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-xl border border-3 border-light rounded-circle">
-                              <img class="rounded-circle" src="./assets/img/team/10.jpg" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-xl border border-3 border-light rounded-circle">
-                              <div class="avatar-name rounded-circle "><span>+2</span></div>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-flex align-items-center position-relative">
-                            <div class="avatar avatar-xl">
-                              <div class="avatar-name rounded-circle text-danger bg-soft-danger fs-0"><span>S</span>
-                              </div>
-                            </div>
-                            <div class="flex-1 ms-3">
-                              <h6 class="mb-0 fw-semi-bold"><a class="stretched-link text-900"
-                                  href="../pages/user/profile.html">Studio Recording</a></h6>
-                              <p class="text-500 fs--2 mb-0">Mailbluster Marketing</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td class="align-middle">
-                          <div class="progress rounded-3 worked" style="height: 6px;">
-                            <div class="progress-bar bg-progress-gradient rounded-pill" role="progressbar"
-                              style="width: 40%" aria-valuenow="43.72" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td class="align-middle text-center time">
-                          <p class="fs--1 mb-0 fw-semi-bold">11h:10m:00s</p>
-                        </td>
-                        <td class="align-middle text-center date">
-                          <p class="fs--1 mb-0 fw-semi-bold">28/02/22</p>
-                        </td>
-                        <td>
-                          <div class="avatar-group justify-content-end">
-                            <div class="avatar avatar-xl border border-3 border-light rounded-circle">
-                              <img class="rounded-circle" src="./assets/img/team/12.jpg" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-xl border border-3 border-light rounded-circle">
-                              <img class="rounded-circle" src="./assets/img/team/13.jpg" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-xl border border-3 border-light rounded-circle">
-                              <img class="rounded-circle" src="./assets/img/team/5.jpg" alt="" />
-
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-flex align-items-center position-relative">
-                            <div class="avatar avatar-xl">
-                              <div class="avatar-name rounded-circle text-success bg-soft-success fs-0"><span>P</span>
-                              </div>
-                            </div>
-                            <div class="flex-1 ms-3">
-                              <h6 class="mb-0 fw-semi-bold"><a class="stretched-link text-900"
-                                  href="../pages/user/profile.html">Project Managenemt</a></h6>
-                              <p class="text-500 fs--2 mb-0">Themewagon</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td class="align-middle">
-                          <div class="progress rounded-3 worked" style="height: 6px;">
-                            <div class="progress-bar bg-progress-gradient rounded-pill" role="progressbar"
-                              style="width: 50%" aria-valuenow="43.72" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td class="align-middle text-center time">
-                          <p class="fs--1 mb-0 fw-semi-bold">12h:30m:30s</p>
-                        </td>
-                        <td class="align-middle text-center date">
-                          <p class="fs--1 mb-0 fw-semi-bold">08/01/22</p>
-                        </td>
-                        <td>
-                          <div class="avatar-group justify-content-end">
-                            <div class="avatar avatar-xl border border-3 border-light rounded-circle">
-                              <img class="rounded-circle" src="./assets/img/team/16.jpg" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-xl border border-3 border-light rounded-circle">
-                              <img class="rounded-circle" src="./assets/img/team/25.jpg" alt="" />
-
-                            </div>
-                            <div class="avatar avatar-xl border border-3 border-light rounded-circle">
-                              <img class="rounded-circle" src="./assets/img/team/18.jpg" alt="" />
-
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
+                        <td class="price align-middle fw-bold text-900">$123,123</td>
+                        <td class="1d align-middle fw-bold d-none d-lg-table-cell text-success">+2.4%</td>
+                        <td class="1m align-middle fw-bold d-none d-lg-table-cell text-success">+12.34%</td>
+                        <td class="1y align-middle fw-bold d-none d-lg-table-cell text-danger">-87.87%</td>
+                        <td class="marketcap align-middle fw-bold text-900">1.92B</td>
+                      </tr>                          
                     </tbody>
                   </table>
                 </div>
+                <div class="d-flex justify-content-center mt-3"><button class="btn btn-sm btn-falcon-default me-1" type="button" title="Previous" data-list-pagination="prev"><span class="fas fa-chevron-left"></span></button>
+                  <ul class="pagination mb-0"></ul><button class="btn btn-sm btn-falcon-default ms-1" type="button" title="Next" data-list-pagination="next"><span class="fas fa-chevron-right"> </span></button>
+                </div>
               </div>
-              <div class="card-footer bg-light py-0 text-center"><a class="btn btn-sm btn-link py-2" href="#!">Show All
-                  Projects<span class="fas fa-chevron-right ms-1 fs--2"></span></a></div>
             </div>
+            <!-- Table Ends -->
+
+            <!-- Empty -->
+            <div class="text-center pt-5 d-none">
+              <i class="far fa-star fa-2x mt-4 mb-3 text-warning" ></i>
+              <h4 class="mb-2">Your Watchlist is empty!</h4>
+              <a class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#create-watchlist">
+                Create Watchlist
+              </a>              
+            </div>
+            <!-- Empty -->
           </div>
-        </div>
+
+        </div>   
 
         <footer class="footer">
           <div class="row g-0 justify-content-between fs--1 mt-4 mb-3">
@@ -335,6 +259,36 @@
   <!-- ===============================================-->
   <!--    End of Main Content-->
   <!-- ===============================================-->
+
+  <!-- Create Watchlist -->
+  <div class="modal fade" id="create-watchlist" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+      <div class="modal-content position-relative">
+        <div class="position-absolute top-0 end-0 mt-2 me-2 z-index-1">
+          <button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <div class="rounded-top-lg py-3 ps-4 pe-6 bg-light">
+            <h4 class="mb-1 text-center" id="modalExampleDemoLabel">WatchList </h4>
+          </div>
+          <div class="px-4">
+            <form>
+              <div class="mb-3 py-3">
+                <label class="col-form-label" for="recipient-name">Search Token:</label>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Select Coins/Tokens/NFTs</option>
+                  <option value="1">Bitcoin (BTC)</option>
+                  <option value="2">Ethereum (ETH)</option>
+                  <option value="3">Others...</option>
+                </select>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <!-- Create Watchlist Ends -->
 
   <!--    JavaScripts-->
   <script src="./vendors/popper/popper.min.js"></script>
